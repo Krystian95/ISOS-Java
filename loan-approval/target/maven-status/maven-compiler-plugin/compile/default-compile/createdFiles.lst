@@ -1,0 +1,3 @@
+org\camunda\bpm\getstarted\loanapproval\ChangeAmountDelegate.class
+org\camunda\bpm\getstarted\loanapproval\LoanApprovalApplication.class
+org\camunda\bpm\getstarted\loanapproval\ProcessRequestDelegate.class
