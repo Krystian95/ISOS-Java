@@ -11,6 +11,7 @@ public class VerificaDisponibilitaComponentiAccessoriMPDelegate implements JavaD
   
   public void execute(DelegateExecution execution) throws Exception {
 	  LOGGER.info("MP - Verifico disponibilità di componenti/accessori nel MP.");
+	  execution.setVariable("materialiPresentiNelMP", true);
   }
 
 }

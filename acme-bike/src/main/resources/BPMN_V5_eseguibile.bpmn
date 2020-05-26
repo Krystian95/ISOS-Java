@@ -64,9 +64,9 @@
         <bpmn:flowNodeRef>Activity_0awutxo</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_0ej2jkx</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0apatsb</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_0dh0tmb</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0cjwskg</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_09fh973</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0dh0tmb</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_0oqr7lp" name="Assemblaggio">
         <bpmn:flowNodeRef>Event_1jpaych</bpmn:flowNodeRef>
@@ -80,7 +80,6 @@
         <bpmn:flowNodeRef>Activity_0bzano3</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1cf1wlr</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_0j0tk0d</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_1mj3aep</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_00emci1</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_139la0h</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_1qm6cl5</bpmn:flowNodeRef>
@@ -291,14 +290,9 @@
       <bpmn:outgoing>Flow_1re37oy</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:serviceTask id="Activity_0j0tk0d" name="Richiesta verifica materiali nel MP" camunda:class="org.camunda.bpm.acme.assemblaggio.RichiestaVerificaMaterialiMPDelegate">
-      <bpmn:incoming>Flow_0gmunmd</bpmn:incoming>
+      <bpmn:incoming>Flow_0t4t44f</bpmn:incoming>
       <bpmn:outgoing>Flow_099y1fi</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:intermediateCatchEvent id="Event_1mj3aep" name="Ricezione comando di assemblaggio">
-      <bpmn:incoming>Flow_0t4t44f</bpmn:incoming>
-      <bpmn:outgoing>Flow_0gmunmd</bpmn:outgoing>
-      <bpmn:messageEventDefinition id="MessageEventDefinition_1k04qn0" messageRef="Message_0q9ixui" />
-    </bpmn:intermediateCatchEvent>
     <bpmn:serviceTask id="Activity_00emci1" name="Creazione lista materiali non presenti nei MS" camunda:class="org.camunda.bpm.acme.assemblaggio.CreazioneListaMaterialiNonPresentiMSDelegate">
       <bpmn:incoming>Flow_0inq9ya</bpmn:incoming>
       <bpmn:outgoing>Flow_0p89f2x</bpmn:outgoing>
@@ -678,7 +672,6 @@
     <bpmn:sequenceFlow id="Flow_0inq9ya" sourceRef="Gateway_139la0h" targetRef="Activity_00emci1" />
     <bpmn:sequenceFlow id="Flow_10cv7vr" sourceRef="Activity_0r2pksn" targetRef="Gateway_0vkhfxo" />
     <bpmn:sequenceFlow id="Flow_0nii0xi" sourceRef="Gateway_139la0h" targetRef="Activity_0r2pksn" />
-    <bpmn:sequenceFlow id="Flow_0gmunmd" sourceRef="Event_1mj3aep" targetRef="Activity_0j0tk0d" />
     <bpmn:sequenceFlow id="Flow_1ar3vgs" name="Sì" sourceRef="Gateway_0vkhfxo" targetRef="Activity_03jx9d6">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${listaSpedizioniMaterialiPresentiMS.length() &gt; 0}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
@@ -723,7 +716,7 @@
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${totaleOrdine &gt; sogliaSconto}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_0dxtigj" sourceRef="Event_1fxc03w" targetRef="Event_1sobm26" />
-    <bpmn:sequenceFlow id="Flow_0t4t44f" name="Elenco componenti/accessori da assemblare" sourceRef="Activity_0dh0tmb" targetRef="Event_1mj3aep" />
+    <bpmn:sequenceFlow id="Flow_0t4t44f" name="Elenco componenti/accessori da assemblare" sourceRef="Activity_0dh0tmb" targetRef="Activity_0j0tk0d" />
     <bpmn:sequenceFlow id="Flow_16r3bmh" sourceRef="Gateway_07indsr" targetRef="Activity_0czc8gm" />
     <bpmn:sequenceFlow id="Flow_1fs3qqf" sourceRef="Event_0n5ehzy" targetRef="Gateway_07indsr" />
     <bpmn:sequenceFlow id="Flow_0qn5t8b" sourceRef="Event_0k6t6zm" targetRef="Gateway_07indsr" />
@@ -777,11 +770,11 @@
       <bpmn:incoming>Flow_151hy7k</bpmn:incoming>
       <bpmn:incoming>Flow_04jnu2l</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:sendTask id="Activity_0dh0tmb" name="Invio comando di assemblaggio" camunda:class="org.camunda.bpm.acme.gestione_ordini.InvioComandoAssemblaggioDelegate">
+    <bpmn:sequenceFlow id="Flow_0va6skh" sourceRef="Activity_1g2pd01" targetRef="Activity_0rrwk05" />
+    <bpmn:serviceTask id="Activity_0dh0tmb" name="Invio comando di assemblaggio" camunda:class="org.camunda.bpm.acme.gestione_ordini.InvioComandoAssemblaggioDelegate">
       <bpmn:incoming>Flow_0f0wju4</bpmn:incoming>
       <bpmn:outgoing>Flow_0t4t44f</bpmn:outgoing>
-    </bpmn:sendTask>
-    <bpmn:sequenceFlow id="Flow_0va6skh" sourceRef="Activity_1g2pd01" targetRef="Activity_0rrwk05" />
+    </bpmn:serviceTask>
     <bpmn:textAnnotation id="TextAnnotation_01ftb4c">
       <bpmn:text>Genera due liste:
 - materiali presenti nel MP
@@ -936,7 +929,7 @@
         <di:waypoint x="3435" y="530" />
         <di:waypoint x="3290" y="530" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="3420" y="512" width="10" height="14" />
+          <dc:Bounds x="3420" y="512" width="11" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_04jnu2l_di" bpmnElement="Flow_04jnu2l">
@@ -997,12 +990,12 @@
         <di:waypoint x="2820" y="460" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0t4t44f_di" bpmnElement="Flow_0t4t44f">
-        <di:waypoint x="3240" y="570" />
-        <di:waypoint x="3240" y="590" />
-        <di:waypoint x="915" y="590" />
-        <di:waypoint x="915" y="962" />
+        <di:waypoint x="3190" y="540" />
+        <di:waypoint x="915" y="540" />
+        <di:waypoint x="915" y="980" />
+        <di:waypoint x="1040" y="980" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="3093" y="528" width="89" height="53" />
+          <dc:Bounds x="3105" y="553" width="90" height="53" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0dxtigj_di" bpmnElement="Flow_0dxtigj">
@@ -1159,10 +1152,6 @@
         <bpmndi:BPMNLabel>
           <dc:Bounds x="3139" y="992" width="11" height="14" />
         </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0gmunmd_di" bpmnElement="Flow_0gmunmd">
-        <di:waypoint x="933" y="980" />
-        <di:waypoint x="1040" y="980" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0nii0xi_di" bpmnElement="Flow_0nii0xi">
         <di:waypoint x="2800" y="970" />
@@ -1428,12 +1417,6 @@
       <bpmndi:BPMNShape id="Activity_1pkfjh0_di" bpmnElement="Activity_0j0tk0d">
         <dc:Bounds x="1040" y="940" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1mj3aep_di" bpmnElement="Event_1mj3aep">
-        <dc:Bounds x="897" y="962" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="882" y="1004" width="68" height="40" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0n1j0e5_di" bpmnElement="Activity_00emci1">
         <dc:Bounds x="2900" y="855" width="100" height="80" />
       </bpmndi:BPMNShape>
@@ -1493,6 +1476,9 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1tk0uds_di" bpmnElement="Activity_0awutxo">
         <dc:Bounds x="1890" y="430" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_07ul799_di" bpmnElement="Activity_0dh0tmb">
+        <dc:Bounds x="3190" y="490" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1ptzaws_di" bpmnElement="Activity_1ptzaws" isExpanded="true">
         <dc:Bounds x="2349" y="1430" width="780" height="438" />
@@ -1891,9 +1877,6 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0apatsb_di" bpmnElement="Event_0apatsb">
         <dc:Bounds x="3682" y="512" width="36" height="36" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0mjvuip_di" bpmnElement="Activity_0dh0tmb">
-        <dc:Bounds x="3190" y="490" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="TextAnnotation_01ftb4c_di" bpmnElement="TextAnnotation_01ftb4c">
         <dc:Bounds x="1630" y="1448" width="185" height="53" />
