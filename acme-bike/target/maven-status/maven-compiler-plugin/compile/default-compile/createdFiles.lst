@@ -22,6 +22,7 @@ org\camunda\bpm\acme\magazzini\RicercaSingoloAccessorioMagazzinoDelegate.class
 org\camunda\bpm\acme\magazzini\InviaElencoMaterialiPresentiMPDelegate.class
 org\camunda\bpm\acme\assemblaggio\RichiestaVerificaMaterialiMSDelegate.class
 org\camunda\bpm\acme\gestione_ordini\CalcoloPreventivoDelegate.class
+org\camunda\bpm\acme\generated\gestione_ordini\GetIdRivenditoreResponse.class
 org\camunda\bpm\acme\assemblaggio\RichiestaTrasferimentoMPDelegate.class
 org\camunda\bpm\acme\magazzini\VerificaDisponibilitaComponentiAccessoriMPDelegate.class
 org\camunda\bpm\acme\magazzini\ContrassegnoIlMaterialeComePresenteMSDelegate.class
@@ -40,8 +41,11 @@ org\camunda\bpm\acme\assemblaggio\AssemblaggioCicliAccessoriDelegate.class
 org\camunda\bpm\acme\gestione_ordini\InvioComandoAssemblaggioDelegate.class
 org\camunda\bpm\acme\gestione_ordini\InvioNotificaCustomizzazioniNonRealizzabiliDelegate.class
 org\camunda\bpm\acme\magazzini\GenerazioneListaMagazziniSingoloAccessorio.class
+org\camunda\bpm\acme\generated\gestione_ordini\NotificaCustomizzazioniNonRealizzabiliResponse.class
+org\camunda\bpm\acme\generated\gestione_ordini\NotificaCustomizzazioniNonRealizzabili.class
 org\camunda\bpm\acme\gestione_ordini\AcmeServerApplication.class
 org\camunda\bpm\acme\gestione_ordini\CalcoloAccessoriDaNonAssemblareAssemblareFacilmenteDelegate.class
+org\camunda\bpm\acme\generated\gestione_ordini\GetIdRivenditore.class
 org\camunda\bpm\acme\gestione_ordini\VerificaAnticipoConSistemaBancarioDelegate.class
 org\camunda\bpm\acme\generated\gestione_ordini\ACMEGestioneOrdini.class
 org\camunda\bpm\acme\magazzini\VerificaMaterialePresenteMSDelegate.class

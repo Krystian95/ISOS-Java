@@ -27,6 +27,18 @@ public interface ACMEGestioneOrdini {
      * 
      * @param body
      * @return
+     *     returns org.camunda.bpm.acme.generated.gestione_ordini.NotificaCustomizzazioniNonRealizzabiliResponse
+     */
+    @WebMethod(action = "notificaCustomizzazioniNonRealizzabili")
+    @WebResult(name = "notificaCustomizzazioniNonRealizzabiliResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+    public NotificaCustomizzazioniNonRealizzabiliResponse notificaCustomizzazioniNonRealizzabili(
+        @WebParam(name = "notificaCustomizzazioniNonRealizzabili", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        NotificaCustomizzazioniNonRealizzabili body);
+
+    /**
+     * 
+     * @param body
+     * @return
      *     returns org.camunda.bpm.acme.generated.gestione_ordini.VerificaCustomizzazioni
      */
     @WebMethod(action = "getIdOrdine")
@@ -46,5 +58,17 @@ public interface ACMEGestioneOrdini {
     public VerificaCustomizzazioniResponse verificaCustomizzazioni(
         @WebParam(name = "verificaCustomizzazioni", targetNamespace = "mytest.test.com.xsd", partName = "body")
         VerificaCustomizzazioni body);
+
+    /**
+     * 
+     * @param body
+     * @return
+     *     returns org.camunda.bpm.acme.generated.gestione_ordini.GetIdRivenditoreResponse
+     */
+    @WebMethod(action = "getIdRivenditore")
+    @WebResult(name = "getIdRivenditoreResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+    public GetIdRivenditoreResponse getIdRivenditore(
+        @WebParam(name = "getIdRivenditore", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        GetIdRivenditore body);
 
 }

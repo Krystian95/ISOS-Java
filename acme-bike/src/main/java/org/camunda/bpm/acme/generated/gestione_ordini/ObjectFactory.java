@@ -30,6 +30,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link NotificaCustomizzazioniNonRealizzabili }
+     * 
+     */
+    public NotificaCustomizzazioniNonRealizzabili createNotificaCustomizzazioniNonRealizzabili() {
+        return new NotificaCustomizzazioniNonRealizzabili();
+    }
+
+    /**
+     * Create an instance of {@link GetIdRivenditoreResponse }
+     * 
+     */
+    public GetIdRivenditoreResponse createGetIdRivenditoreResponse() {
+        return new GetIdRivenditoreResponse();
+    }
+
+    /**
      * Create an instance of {@link GetIdOrdine }
      * 
      */
@@ -59,6 +75,22 @@ public class ObjectFactory {
      */
     public VerificaCustomizzazioni createVerificaCustomizzazioni() {
         return new VerificaCustomizzazioni();
+    }
+
+    /**
+     * Create an instance of {@link GetIdRivenditore }
+     * 
+     */
+    public GetIdRivenditore createGetIdRivenditore() {
+        return new GetIdRivenditore();
+    }
+
+    /**
+     * Create an instance of {@link NotificaCustomizzazioniNonRealizzabiliResponse }
+     * 
+     */
+    public NotificaCustomizzazioniNonRealizzabiliResponse createNotificaCustomizzazioniNonRealizzabiliResponse() {
+        return new NotificaCustomizzazioniNonRealizzabiliResponse();
     }
 
 }
