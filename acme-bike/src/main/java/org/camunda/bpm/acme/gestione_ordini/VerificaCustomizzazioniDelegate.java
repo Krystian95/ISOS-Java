@@ -40,8 +40,9 @@ public class VerificaCustomizzazioniDelegate implements JavaDelegate {
 		VerificaCustomizzazioniResponse verificaCustomizzazioni = acmeGestioneOrdini.verificaCustomizzazioni(bodyVerificaCustomizzazioni);
 		
 		LOGGER.info("[VerificaCustomizzazioniDelegate] verificaCustomizzazioni = "+verificaCustomizzazioni.isCustomizzazioniPossibili());
-		
-		execution.setVariable("customizzazioniPossibili", true);
+	
+		execution.setVariable("idOrdine", idOrdine);
+		execution.setVariable("customizzazioniPossibili", verificaCustomizzazioni.isCustomizzazioniPossibili());
 	}
 
 }
