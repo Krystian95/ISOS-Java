@@ -43,6 +43,8 @@ public class VerificaCustomizzazioniDelegate implements JavaDelegate {
 	
 		execution.setVariable("idOrdine", idOrdine);
 		execution.setVariable("customizzazioniPossibili", verificaCustomizzazioni.isCustomizzazioniPossibili());
+		execution.setVariable("ordineContieneComponentiAccessoriDaAssemblare", true);
+		execution.setVariable("ordineContieneAccessoriDaNonAssemblare", true);
 	}
 
 }

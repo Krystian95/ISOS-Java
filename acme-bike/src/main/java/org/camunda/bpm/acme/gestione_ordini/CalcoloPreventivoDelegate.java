@@ -14,6 +14,9 @@ public class CalcoloPreventivoDelegate implements JavaDelegate {
 	  LOGGER.info("GESTIONE ORDINI - Calcolo il preventivo.");
 	  execution.setVariable("totaleOrdine", 10.0);
 	  execution.setVariable("sogliaSconto", 5.0);
+	  execution.setVariable("ordineContieneMaterialiPrenotatiMP", true);
+	  execution.setVariable("ordineContieneMaterialiDaOrdinareDaFornitore", true);
+	  execution.setVariable("ordineContieneMaterialiPrenotatiMS", true);
   }
 
 }

@@ -4,13 +4,12 @@ import java.util.logging.Logger;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
-public class VerificaMaterialePresenteMPDelegate implements JavaDelegate {
+public class SelezioneMagazzinoVicinoSedeClienteDelegate implements JavaDelegate {
 
   private final static Logger LOGGER = Logger.getLogger("MAGAZZINI");
-  boolean singoloMaterialePresenteNelMP;
   
   public void execute(DelegateExecution execution) throws Exception {
-	  LOGGER.info("MP - Verifico la presenza del materiale nel MP.");
+	  LOGGER.info("MS - Seleziono il magazzino più vicino alla sede del cliente.");
   }
 
 }
