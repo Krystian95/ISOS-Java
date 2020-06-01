@@ -17,7 +17,9 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
+ *         &lt;element name="ordineContieneAccessoriDaNonAssemblare" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="customizzazioniPossibili" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         &lt;element name="ordineContieneComponentiAccessoriDaAssemblare" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -28,12 +30,32 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "customizzazioniPossibili"
+    "ordineContieneAccessoriDaNonAssemblare",
+    "customizzazioniPossibili",
+    "ordineContieneComponentiAccessoriDaAssemblare"
 })
 @XmlRootElement(name = "verificaCustomizzazioniResponse")
 public class VerificaCustomizzazioniResponse {
 
+    protected boolean ordineContieneAccessoriDaNonAssemblare;
     protected boolean customizzazioniPossibili;
+    protected boolean ordineContieneComponentiAccessoriDaAssemblare;
+
+    /**
+     * Recupera il valore della proprietà ordineContieneAccessoriDaNonAssemblare.
+     * 
+     */
+    public boolean isOrdineContieneAccessoriDaNonAssemblare() {
+        return ordineContieneAccessoriDaNonAssemblare;
+    }
+
+    /**
+     * Imposta il valore della proprietà ordineContieneAccessoriDaNonAssemblare.
+     * 
+     */
+    public void setOrdineContieneAccessoriDaNonAssemblare(boolean value) {
+        this.ordineContieneAccessoriDaNonAssemblare = value;
+    }
 
     /**
      * Recupera il valore della proprietà customizzazioniPossibili.
@@ -49,6 +71,22 @@ public class VerificaCustomizzazioniResponse {
      */
     public void setCustomizzazioniPossibili(boolean value) {
         this.customizzazioniPossibili = value;
+    }
+
+    /**
+     * Recupera il valore della proprietà ordineContieneComponentiAccessoriDaAssemblare.
+     * 
+     */
+    public boolean isOrdineContieneComponentiAccessoriDaAssemblare() {
+        return ordineContieneComponentiAccessoriDaAssemblare;
+    }
+
+    /**
+     * Imposta il valore della proprietà ordineContieneComponentiAccessoriDaAssemblare.
+     * 
+     */
+    public void setOrdineContieneComponentiAccessoriDaAssemblare(boolean value) {
+        this.ordineContieneComponentiAccessoriDaAssemblare = value;
     }
 
 }

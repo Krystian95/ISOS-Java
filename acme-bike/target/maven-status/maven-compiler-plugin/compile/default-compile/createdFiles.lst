@@ -27,10 +27,12 @@ org\camunda\bpm\acme\magazzini\GenerazioneListaMaterialiPresentiMPDelegate.class
 org\camunda\bpm\acme\magazzini\SbloccoPrenotazioniComponentiAccessoriMagazziniDelegate.class
 org\camunda\bpm\acme\assemblaggio\RichiestaVerificaMaterialiMSDelegate.class
 org\camunda\bpm\acme\generated\gestione_ordini\GetIdRivenditore.class
+org\camunda\bpm\acme\generated\gestione_ordini\PrenotazioneMaterialiPresentiMPDelegate.class
 org\camunda\bpm\acme\gestione_ordini\VerificaAnticipoConSistemaBancarioDelegate.class
 org\camunda\bpm\acme\gestione_ordini\CalcoloPreventivoDelegate.class
 org\camunda\bpm\acme\generated\gestione_ordini\GetIdRivenditoreResponse.class
 org\camunda\bpm\acme\generated\gestione_ordini\ACMEGestioneOrdini.class
+org\camunda\bpm\acme\generated\gestione_ordini\PrenotazioneMaterialiPresentiMPDelegateResponse.class
 org\camunda\bpm\acme\assemblaggio\RichiestaTrasferimentoMPDelegate.class
 org\camunda\bpm\acme\gestione_ordini\VerificaCustomizzazioniDelegate.class
 org\camunda\bpm\acme\magazzini\InvioMaterialiMSDelegate.class
