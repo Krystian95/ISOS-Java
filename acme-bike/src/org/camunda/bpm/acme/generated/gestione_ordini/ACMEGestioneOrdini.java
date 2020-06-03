@@ -39,6 +39,18 @@ public interface ACMEGestioneOrdini {
      * 
      * @param body
      * @return
+     *     returns org.camunda.bpm.acme.generated.gestione_ordini.PrenotazioneMaterialiPresentiMPResponse
+     */
+    @WebMethod(action = "prenotazioneMaterialiPresentiMP")
+    @WebResult(name = "prenotazioneMaterialiPresentiMPResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+    public PrenotazioneMaterialiPresentiMPResponse prenotazioneMaterialiPresentiMP(
+        @WebParam(name = "prenotazioneMaterialiPresentiMP", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        PrenotazioneMaterialiPresentiMP body);
+
+    /**
+     * 
+     * @param body
+     * @return
      *     returns org.camunda.bpm.acme.generated.gestione_ordini.VerificaCustomizzazioni
      */
     @WebMethod(action = "getIdOrdine")
@@ -70,17 +82,5 @@ public interface ACMEGestioneOrdini {
     public GetIdRivenditoreResponse getIdRivenditore(
         @WebParam(name = "getIdRivenditore", targetNamespace = "mytest.test.com.xsd", partName = "body")
         GetIdRivenditore body);
-
-    /**
-     * 
-     * @param body
-     * @return
-     *     returns org.camunda.bpm.acme.generated.gestione_ordini.PrenotazioneMaterialiPresentiMPDelegateResponse
-     */
-    @WebMethod(action = "prenotazioneMaterialiPresentiMPDelegate")
-    @WebResult(name = "prenotazioneMaterialiPresentiMPDelegateResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
-    public PrenotazioneMaterialiPresentiMPDelegateResponse prenotazioneMaterialiPresentiMPDelegate(
-        @WebParam(name = "prenotazioneMaterialiPresentiMPDelegate", targetNamespace = "mytest.test.com.xsd", partName = "body")
-        PrenotazioneMaterialiPresentiMPDelegate body);
 
 }

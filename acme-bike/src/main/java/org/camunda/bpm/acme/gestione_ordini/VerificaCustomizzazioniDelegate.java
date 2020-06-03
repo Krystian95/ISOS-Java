@@ -25,26 +25,30 @@ public class VerificaCustomizzazioniDelegate implements JavaDelegate {
 		LOGGER.info("GESTIONE ORDINI - Verifico le customizzazioni disponibili.");
 
 		ACMEGestioneOrdini acmeGestioneOrdini = new ACMEGestioneOrdiniService().getACMEGestioneOrdiniServicePort();
-		
+
 		GetIdOrdine body = null;
-		
+
 		VerificaCustomizzazioni idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
-		
+
 		String idOrdine = idOrdineResponse.getIdOrdine();
-		
-		LOGGER.info("[VerificaCustomizzazioniDelegate] idOrdineResponse = "+idOrdine);
+
+		LOGGER.info("[VerificaCustomizzazioniDelegate] idOrdineResponse = " + idOrdine);
 
 		VerificaCustomizzazioni bodyVerificaCustomizzazioni = new VerificaCustomizzazioni();
 		bodyVerificaCustomizzazioni.setIdOrdine(idOrdine);
-		
-		VerificaCustomizzazioniResponse verificaCustomizzazioni = acmeGestioneOrdini.verificaCustomizzazioni(bodyVerificaCustomizzazioni);
-		
-		LOGGER.info("[VerificaCustomizzazioniDelegate] verificaCustomizzazioni = "+verificaCustomizzazioni.isCustomizzazioniPossibili());
-	
+
+		VerificaCustomizzazioniResponse verificaCustomizzazioni = acmeGestioneOrdini
+				.verificaCustomizzazioni(bodyVerificaCustomizzazioni);
+
+		LOGGER.info("[VerificaCustomizzazioniDelegate] verificaCustomizzazioni = "
+				+ verificaCustomizzazioni.isCustomizzazioniPossibili());
+
 		execution.setVariable("idOrdine", idOrdine);
 		execution.setVariable("customizzazioniPossibili", verificaCustomizzazioni.isCustomizzazioniPossibili());
-		execution.setVariable("ordineContieneComponentiAccessoriDaAssemblare", verificaCustomizzazioni.isOrdineContieneComponentiAccessoriDaAssemblare());
-		execution.setVariable("ordineContieneAccessoriDaNonAssemblare", verificaCustomizzazioni.isOrdineContieneAccessoriDaNonAssemblare());
+		execution.setVariable("ordineContieneComponentiAccessoriDaAssemblare",
+				verificaCustomizzazioni.isOrdineContieneComponentiAccessoriDaAssemblare());
+		execution.setVariable("ordineContieneAccessoriDaNonAssemblare",
+				verificaCustomizzazioni.isOrdineContieneAccessoriDaNonAssemblare());
 	}
 
 }

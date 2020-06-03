@@ -38,11 +38,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link PrenotazioneMaterialiPresentiMPDelegateResponse }
+     * Create an instance of {@link PrenotazioneMaterialiPresentiMP }
      * 
      */
-    public PrenotazioneMaterialiPresentiMPDelegateResponse createPrenotazioneMaterialiPresentiMPDelegateResponse() {
-        return new PrenotazioneMaterialiPresentiMPDelegateResponse();
+    public PrenotazioneMaterialiPresentiMP createPrenotazioneMaterialiPresentiMP() {
+        return new PrenotazioneMaterialiPresentiMP();
+    }
+
+    /**
+     * Create an instance of {@link PrenotazioneMaterialiPresentiMPResponse }
+     * 
+     */
+    public PrenotazioneMaterialiPresentiMPResponse createPrenotazioneMaterialiPresentiMPResponse() {
+        return new PrenotazioneMaterialiPresentiMPResponse();
     }
 
     /**
@@ -91,14 +99,6 @@ public class ObjectFactory {
      */
     public GetIdRivenditore createGetIdRivenditore() {
         return new GetIdRivenditore();
-    }
-
-    /**
-     * Create an instance of {@link PrenotazioneMaterialiPresentiMPDelegate }
-     * 
-     */
-    public PrenotazioneMaterialiPresentiMPDelegate createPrenotazioneMaterialiPresentiMPDelegate() {
-        return new PrenotazioneMaterialiPresentiMPDelegate();
     }
 
     /**

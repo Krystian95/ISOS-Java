@@ -31,8 +31,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "idOrdine"
 })
-@XmlRootElement(name = "prenotazioneMaterialiPresentiMPDelegate")
-public class PrenotazioneMaterialiPresentiMPDelegate {
+@XmlRootElement(name = "prenotazioneMaterialiPresentiMP")
+public class PrenotazioneMaterialiPresentiMP {
 
     @XmlElement(required = true)
     protected String idOrdine;
