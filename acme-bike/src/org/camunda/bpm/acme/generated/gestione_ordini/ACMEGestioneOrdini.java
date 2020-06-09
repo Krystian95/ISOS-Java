@@ -83,4 +83,16 @@ public interface ACMEGestioneOrdini {
         @WebParam(name = "getIdRivenditore", targetNamespace = "mytest.test.com.xsd", partName = "body")
         GetIdRivenditore body);
 
+    /**
+     * 
+     * @param body
+     * @return
+     *     returns org.camunda.bpm.acme.generated.gestione_ordini.PrenotazioneMaterialiPresentiMSResponse
+     */
+    @WebMethod(action = "prenotazioneMaterialiPresentiMS")
+    @WebResult(name = "prenotazioneMaterialiPresentiMSResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+    public PrenotazioneMaterialiPresentiMSResponse prenotazioneMaterialiPresentiMS(
+        @WebParam(name = "prenotazioneMaterialiPresentiMS", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        PrenotazioneMaterialiPresentiMS body);
+
 }

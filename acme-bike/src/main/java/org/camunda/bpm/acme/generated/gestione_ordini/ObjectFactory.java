@@ -78,6 +78,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link PrenotazioneMaterialiPresentiMSResponse }
+     * 
+     */
+    public PrenotazioneMaterialiPresentiMSResponse createPrenotazioneMaterialiPresentiMSResponse() {
+        return new PrenotazioneMaterialiPresentiMSResponse();
+    }
+
+    /**
      * Create an instance of {@link GetIdOrdineResponse }
      * 
      */
@@ -107,6 +115,14 @@ public class ObjectFactory {
      */
     public NotificaCustomizzazioniNonRealizzabiliResponse createNotificaCustomizzazioniNonRealizzabiliResponse() {
         return new NotificaCustomizzazioniNonRealizzabiliResponse();
+    }
+
+    /**
+     * Create an instance of {@link PrenotazioneMaterialiPresentiMS }
+     * 
+     */
+    public PrenotazioneMaterialiPresentiMS createPrenotazioneMaterialiPresentiMS() {
+        return new PrenotazioneMaterialiPresentiMS();
     }
 
 }
