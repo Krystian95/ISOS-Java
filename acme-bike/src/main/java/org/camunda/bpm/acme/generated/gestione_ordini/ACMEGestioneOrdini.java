@@ -87,6 +87,18 @@ public interface ACMEGestioneOrdini {
      * 
      * @param body
      * @return
+     *     returns org.camunda.bpm.acme.generated.gestione_ordini.GenerazioneListaAccessoriPresentiMagazziniResponse
+     */
+    @WebMethod(action = "generazioneListaAccessoriPresentiMagazzini")
+    @WebResult(name = "generazioneListaAccessoriPresentiMagazziniResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+    public GenerazioneListaAccessoriPresentiMagazziniResponse generazioneListaAccessoriPresentiMagazzini(
+        @WebParam(name = "generazioneListaAccessoriPresentiMagazzini", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        GenerazioneListaAccessoriPresentiMagazzini body);
+
+    /**
+     * 
+     * @param body
+     * @return
      *     returns org.camunda.bpm.acme.generated.gestione_ordini.PrenotazioneMaterialiPresentiMSResponse
      */
     @WebMethod(action = "prenotazioneMaterialiPresentiMS")

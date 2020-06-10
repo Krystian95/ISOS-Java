@@ -46,43 +46,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link PrenotazioneMaterialiPresentiMPResponse }
-     * 
-     */
-    public PrenotazioneMaterialiPresentiMPResponse createPrenotazioneMaterialiPresentiMPResponse() {
-        return new PrenotazioneMaterialiPresentiMPResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetIdRivenditoreResponse }
-     * 
-     */
-    public GetIdRivenditoreResponse createGetIdRivenditoreResponse() {
-        return new GetIdRivenditoreResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetIdOrdine }
-     * 
-     */
-    public GetIdOrdine createGetIdOrdine() {
-        return new GetIdOrdine();
-    }
-
-    /**
      * Create an instance of {@link VerificaCustomizzazioniResponse }
      * 
      */
     public VerificaCustomizzazioniResponse createVerificaCustomizzazioniResponse() {
         return new VerificaCustomizzazioniResponse();
-    }
-
-    /**
-     * Create an instance of {@link PrenotazioneMaterialiPresentiMSResponse }
-     * 
-     */
-    public PrenotazioneMaterialiPresentiMSResponse createPrenotazioneMaterialiPresentiMSResponse() {
-        return new PrenotazioneMaterialiPresentiMSResponse();
     }
 
     /**
@@ -102,11 +70,59 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link PrenotazioneMaterialiPresentiMPResponse }
+     * 
+     */
+    public PrenotazioneMaterialiPresentiMPResponse createPrenotazioneMaterialiPresentiMPResponse() {
+        return new PrenotazioneMaterialiPresentiMPResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetIdRivenditoreResponse }
+     * 
+     */
+    public GetIdRivenditoreResponse createGetIdRivenditoreResponse() {
+        return new GetIdRivenditoreResponse();
+    }
+
+    /**
+     * Create an instance of {@link GenerazioneListaAccessoriPresentiMagazziniResponse }
+     * 
+     */
+    public GenerazioneListaAccessoriPresentiMagazziniResponse createGenerazioneListaAccessoriPresentiMagazziniResponse() {
+        return new GenerazioneListaAccessoriPresentiMagazziniResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetIdOrdine }
+     * 
+     */
+    public GetIdOrdine createGetIdOrdine() {
+        return new GetIdOrdine();
+    }
+
+    /**
+     * Create an instance of {@link PrenotazioneMaterialiPresentiMSResponse }
+     * 
+     */
+    public PrenotazioneMaterialiPresentiMSResponse createPrenotazioneMaterialiPresentiMSResponse() {
+        return new PrenotazioneMaterialiPresentiMSResponse();
+    }
+
+    /**
      * Create an instance of {@link GetIdRivenditore }
      * 
      */
     public GetIdRivenditore createGetIdRivenditore() {
         return new GetIdRivenditore();
+    }
+
+    /**
+     * Create an instance of {@link GenerazioneListaAccessoriPresentiMagazzini }
+     * 
+     */
+    public GenerazioneListaAccessoriPresentiMagazzini createGenerazioneListaAccessoriPresentiMagazzini() {
+        return new GenerazioneListaAccessoriPresentiMagazzini();
     }
 
     /**
