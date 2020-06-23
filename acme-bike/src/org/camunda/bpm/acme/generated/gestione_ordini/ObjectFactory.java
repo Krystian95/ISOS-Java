@@ -70,6 +70,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link InvioPreventivoResponse }
+     * 
+     */
+    public InvioPreventivoResponse createInvioPreventivoResponse() {
+        return new InvioPreventivoResponse();
+    }
+
+    /**
      * Create an instance of {@link CalcoloPreventivo }
      * 
      */
@@ -115,6 +123,14 @@ public class ObjectFactory {
      */
     public CalcoloPreventivoResponse createCalcoloPreventivoResponse() {
         return new CalcoloPreventivoResponse();
+    }
+
+    /**
+     * Create an instance of {@link InvioPreventivo }
+     * 
+     */
+    public InvioPreventivo createInvioPreventivo() {
+        return new InvioPreventivo();
     }
 
     /**

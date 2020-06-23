@@ -75,6 +75,18 @@ public interface ACMEGestioneOrdini {
      * 
      * @param body
      * @return
+     *     returns org.camunda.bpm.acme.generated.gestione_ordini.InvioPreventivoResponse
+     */
+    @WebMethod(action = "invioPreventivo")
+    @WebResult(name = "invioPreventivoResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+    public InvioPreventivoResponse invioPreventivo(
+        @WebParam(name = "invioPreventivo", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        InvioPreventivo body);
+
+    /**
+     * 
+     * @param body
+     * @return
      *     returns org.camunda.bpm.acme.generated.gestione_ordini.VerificaCustomizzazioni
      */
     @WebMethod(action = "getIdOrdine")
