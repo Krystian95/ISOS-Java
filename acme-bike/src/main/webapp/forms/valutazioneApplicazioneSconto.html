@@ -3,19 +3,22 @@
   <script cam-script type="text/form-script">
     camForm.on('form-loaded', function() {
       camForm.variableManager.fetchVariable('idOrdine');
-	  camForm.variableManager.fetchVariable('totaleOrdine');
+      camForm.variableManager.fetchVariable('idRivenditore');
+	  camForm.variableManager.fetchVariable('totalePreventivo');
 	  camForm.variableManager.fetchVariable('sogliaSconto');
     });
 
     camForm.on('variables-fetched', function() {
       $scope.idOrdine = camForm.variableManager.variable('idOrdine').value;
-	  $scope.totaleOrdine = camForm.variableManager.variable('totaleOrdine').value;
+      $scope.idRivenditore = camForm.variableManager.variable('idRivenditore').value;
+	  $scope.totalePreventivo = camForm.variableManager.variable('totalePreventivo').value;
 	  $scope.sogliaSconto = camForm.variableManager.variable('sogliaSconto').value;
     });
   </script>
   
    <p class="lead">Valuta l'applicazione di uno sconto dell'ordine</p>
   <div><font class="control-label">ID Ordine: </font>{{idOrdine}}</div>
+  <div><font class="control-label">ID Rivenditore: </font>{{idRivenditore}}</div>
   <br>
   
   <p class="lead">Sconto</p>
@@ -23,14 +26,14 @@
   <br>
   
   <p class="lead">Prezzo ordine</p>
-  <div><font class="control-label"><strong>Il prezzo totale dell'ordine (senza sconto) è: </font>{{totaleOrdine}} €</strong></div>
+  <div><font class="control-label"><strong>Il prezzo totale dell'ordine (senza sconto) è: </font>{{totalePreventivo}} €</strong></div>
   <br>
   
     <p class="lead">Sconto (in percentuale):</p>
   <form>
 	  <input required
 	       type="number"
-	       cam-variable-name="sconto"
+	       cam-variable-name="percentualeSconto"
 	       cam-variable-type="Double"
 	       min="0" 
 	       max="100"/> %

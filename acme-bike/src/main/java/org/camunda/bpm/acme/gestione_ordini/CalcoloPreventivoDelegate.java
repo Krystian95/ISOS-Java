@@ -33,6 +33,7 @@ public class CalcoloPreventivoDelegate implements JavaDelegate {
 
 		idRivenditore = getIdRivenditore.getIdRivenditore();
 		body.setIdRivenditore(idRivenditore);
+		execution.setVariable("idRivenditore", idRivenditore);
 		
 		LOGGER.info("VEDI QUA ID ORDINE: "+idOrdine);
 		LOGGER.info("VEDI QUA ID RIVENDITORE: "+idRivenditore);
@@ -45,8 +46,7 @@ public class CalcoloPreventivoDelegate implements JavaDelegate {
 		LOGGER.info("[CalcoloPreventivo] Message= Calcolo preventivo effettuato. Totale: "
 				+ CalcoloPreventivo.getTotalePreventivo() + ", soglia sconto: " + CalcoloPreventivo.getSogliaSconto());
 
-		// execution.setVariable("totaleOrdine", 10.0);
-		// execution.setVariable("sogliaSconto", 5.0);
+		execution.setVariable("totalePreventivo", 1200.00);
 		execution.setVariable("ordineContieneMaterialiPrenotatiMP", true);
 		execution.setVariable("ordineContieneMaterialiDaOrdinareDaFornitore", true);
 		execution.setVariable("ordineContieneMaterialiPrenotatiMS", true);
