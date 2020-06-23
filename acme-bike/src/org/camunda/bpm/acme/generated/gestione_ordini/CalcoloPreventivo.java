@@ -19,6 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="idOrdine" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="idRivenditore" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,13 +30,16 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "idOrdine"
+    "idOrdine",
+    "idRivenditore"
 })
-@XmlRootElement(name = "getIdRivenditore")
-public class GetIdRivenditore {
+@XmlRootElement(name = "calcoloPreventivo")
+public class CalcoloPreventivo {
 
     @XmlElement(required = true)
     protected String idOrdine;
+    @XmlElement(required = true)
+    protected String idRivenditore;
 
     /**
      * Recupera il valore della proprietà idOrdine.
@@ -59,6 +63,30 @@ public class GetIdRivenditore {
      */
     public void setIdOrdine(String value) {
         this.idOrdine = value;
+    }
+
+    /**
+     * Recupera il valore della proprietà idRivenditore.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getIdRivenditore() {
+        return idRivenditore;
+    }
+
+    /**
+     * Imposta il valore della proprietà idRivenditore.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setIdRivenditore(String value) {
+        this.idRivenditore = value;
     }
 
 }

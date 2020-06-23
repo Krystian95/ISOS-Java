@@ -39,6 +39,30 @@ public interface ACMEGestioneOrdini {
      * 
      * @param body
      * @return
+     *     returns org.camunda.bpm.acme.generated.gestione_ordini.CalcoloPreventivoResponse
+     */
+    @WebMethod(action = "calcoloPreventivo")
+    @WebResult(name = "calcoloPreventivoResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+    public CalcoloPreventivoResponse calcoloPreventivo(
+        @WebParam(name = "calcoloPreventivo", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        CalcoloPreventivo body);
+
+    /**
+     * 
+     * @param body
+     * @return
+     *     returns org.camunda.bpm.acme.generated.gestione_ordini.ApplicazioneScontoResponse
+     */
+    @WebMethod(action = "applicazioneSconto")
+    @WebResult(name = "applicazioneScontoResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+    public ApplicazioneScontoResponse applicazioneSconto(
+        @WebParam(name = "applicazioneSconto", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        ApplicazioneSconto body);
+
+    /**
+     * 
+     * @param body
+     * @return
      *     returns org.camunda.bpm.acme.generated.gestione_ordini.PrenotazioneMaterialiPresentiMPResponse
      */
     @WebMethod(action = "prenotazioneMaterialiPresentiMP")

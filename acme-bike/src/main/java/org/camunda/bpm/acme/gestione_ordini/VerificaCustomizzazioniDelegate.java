@@ -7,14 +7,8 @@ import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdiniService;
 import org.camunda.bpm.acme.generated.gestione_ordini.GetIdOrdine;
 import org.camunda.bpm.acme.generated.gestione_ordini.VerificaCustomizzazioni;
 import org.camunda.bpm.acme.generated.gestione_ordini.VerificaCustomizzazioniResponse;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.ProcessEngines;
-import org.camunda.bpm.engine.RepositoryService;
-import org.camunda.bpm.engine.RuntimeService;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
-import org.camunda.bpm.engine.repository.ProcessDefinition;
-import org.camunda.bpm.engine.runtime.Execution;
 
 public class VerificaCustomizzazioniDelegate implements JavaDelegate {
 
@@ -40,7 +34,7 @@ public class VerificaCustomizzazioniDelegate implements JavaDelegate {
 		VerificaCustomizzazioniResponse verificaCustomizzazioni = acmeGestioneOrdini
 				.verificaCustomizzazioni(bodyVerificaCustomizzazioni);
 
-		LOGGER.info("[VerificaCustomizzazioniDelegate] verificaCustomizzazioni = "
+		LOGGER.info("[VerificaCustomizzazioniDelegate] customizzazioniPossibili = "
 				+ verificaCustomizzazioni.isCustomizzazioniPossibili());
 
 		execution.setVariable("idOrdine", idOrdine);

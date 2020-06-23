@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="response" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,36 +29,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "response"
+    "message"
 })
 @XmlRootElement(name = "notificaCustomizzazioniNonRealizzabiliResponse")
 public class NotificaCustomizzazioniNonRealizzabiliResponse {
 
     @XmlElement(required = true)
-    protected String response;
+    protected String message;
 
     /**
-     * Recupera il valore della proprietà response.
+     * Recupera il valore della proprietà message.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getResponse() {
-        return response;
+    public String getMessage() {
+        return message;
     }
 
     /**
-     * Imposta il valore della proprietà response.
+     * Imposta il valore della proprietà message.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setResponse(String value) {
-        this.response = value;
+    public void setMessage(String value) {
+        this.message = value;
     }
 
 }

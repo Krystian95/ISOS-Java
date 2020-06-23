@@ -31,8 +31,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "message"
 })
-@XmlRootElement(name = "notificaCustomizzazioniNonRealizzabiliResponse")
-public class NotificaCustomizzazioniNonRealizzabiliResponse {
+@XmlRootElement(name = "applicazioneScontoResponse")
+public class ApplicazioneScontoResponse {
 
     @XmlElement(required = true)
     protected String message;

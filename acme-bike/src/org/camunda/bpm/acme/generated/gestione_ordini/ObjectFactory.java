@@ -70,6 +70,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CalcoloPreventivo }
+     * 
+     */
+    public CalcoloPreventivo createCalcoloPreventivo() {
+        return new CalcoloPreventivo();
+    }
+
+    /**
+     * Create an instance of {@link ApplicazioneSconto }
+     * 
+     */
+    public ApplicazioneSconto createApplicazioneSconto() {
+        return new ApplicazioneSconto();
+    }
+
+    /**
      * Create an instance of {@link PrenotazioneMaterialiPresentiMPResponse }
      * 
      */
@@ -94,6 +110,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CalcoloPreventivoResponse }
+     * 
+     */
+    public CalcoloPreventivoResponse createCalcoloPreventivoResponse() {
+        return new CalcoloPreventivoResponse();
+    }
+
+    /**
      * Create an instance of {@link GetIdOrdine }
      * 
      */
@@ -107,6 +131,14 @@ public class ObjectFactory {
      */
     public PrenotazioneMaterialiPresentiMSResponse createPrenotazioneMaterialiPresentiMSResponse() {
         return new PrenotazioneMaterialiPresentiMSResponse();
+    }
+
+    /**
+     * Create an instance of {@link ApplicazioneScontoResponse }
+     * 
+     */
+    public ApplicazioneScontoResponse createApplicazioneScontoResponse() {
+        return new ApplicazioneScontoResponse();
     }
 
     /**
