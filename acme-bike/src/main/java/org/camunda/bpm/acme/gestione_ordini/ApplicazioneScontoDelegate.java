@@ -23,8 +23,6 @@ public class ApplicazioneScontoDelegate implements JavaDelegate {
 		body.setIdOrdine((String) execution.getVariable("idOrdine"));
 		body.setPercentualeSconto((String) execution.getVariable("percentualeSconto"));
 
-		acmeGestioneOrdini.applicazioneSconto(body);
-		
 		ApplicazioneScontoResponse ApplicazioneSconto = acmeGestioneOrdini.applicazioneSconto(body);
 		LOGGER.info("[ApplicazioneSconto] Message= "+ ApplicazioneSconto.getMessage());
 		

@@ -4,8 +4,6 @@ import java.util.logging.Logger;
 
 import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdini;
 import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdiniService;
-import org.camunda.bpm.acme.generated.gestione_ordini.ApplicazioneSconto;
-import org.camunda.bpm.acme.generated.gestione_ordini.GetIdOrdine;
 import org.camunda.bpm.acme.generated.gestione_ordini.GetIdRivenditore;
 import org.camunda.bpm.acme.generated.gestione_ordini.GetIdRivenditoreResponse;
 import org.camunda.bpm.acme.generated.gestione_ordini.InvioPreventivo;
