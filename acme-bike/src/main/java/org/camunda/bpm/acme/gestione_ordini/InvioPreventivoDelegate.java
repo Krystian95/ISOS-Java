@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdini;
 import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdiniService;
 import org.camunda.bpm.acme.generated.gestione_ordini.ApplicazioneSconto;
+import org.camunda.bpm.acme.generated.gestione_ordini.GetIdOrdine;
 import org.camunda.bpm.acme.generated.gestione_ordini.GetIdRivenditore;
 import org.camunda.bpm.acme.generated.gestione_ordini.GetIdRivenditoreResponse;
 import org.camunda.bpm.acme.generated.gestione_ordini.InvioPreventivo;
@@ -23,6 +24,7 @@ public class InvioPreventivoDelegate implements JavaDelegate {
 		ACMEGestioneOrdini acmeGestioneOrdini = new ACMEGestioneOrdiniService().getACMEGestioneOrdiniServicePort();
 		
 		InvioPreventivo body = new InvioPreventivo();
+		
 		String idOrdine = (String) execution.getVariable("idOrdine");
 		String idRivenditore = null;
 

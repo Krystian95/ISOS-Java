@@ -120,8 +120,9 @@
         <bpmn:flowNodeRef>Event_1dpdk45</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0ftwc2c</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_04w0f38</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_1cjhmkf</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0yrowbx</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1cjhmkf</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1d3w0hw</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
     <bpmn:sequenceFlow id="Flow_05lk57g" sourceRef="Activity_02dnfjs" targetRef="Activity_0vtd7v0" />
@@ -196,7 +197,7 @@
     <bpmn:sequenceFlow id="Flow_1j0skbf" sourceRef="Activity_1fpw2ul" targetRef="Activity_0tnlz65" />
     <bpmn:sequenceFlow id="Flow_00udagd" sourceRef="Activity_0psaq7m" targetRef="Activity_0c4bac0" />
     <bpmn:sequenceFlow id="Flow_0ok4xyc" sourceRef="Activity_1hvdfr3" targetRef="Gateway_058r2z1" />
-    <bpmn:sequenceFlow id="Flow_0wi9wyo" sourceRef="Activity_1cjhmkf" targetRef="Gateway_07w172g" />
+    <bpmn:sequenceFlow id="Flow_0wi9wyo" sourceRef="Activity_1cjhmkf" targetRef="Activity_1d3w0hw" />
     <bpmn:sequenceFlow id="Flow_0lg5lm3" sourceRef="Gateway_07w172g" targetRef="Activity_052z89b" />
     <bpmn:sequenceFlow id="Flow_169hhtb" name="Sì" sourceRef="Gateway_058r2z1" targetRef="Activity_1cjhmkf">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${totalePreventivo &gt; sogliaSconto}</bpmn:conditionExpression>
@@ -318,8 +319,8 @@
       <bpmn:outgoing>Flow_0r6u4fv</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:exclusiveGateway id="Gateway_07w172g">
-      <bpmn:incoming>Flow_0wi9wyo</bpmn:incoming>
       <bpmn:incoming>Flow_0r6u4fv</bpmn:incoming>
+      <bpmn:incoming>Flow_0qsmvvw</bpmn:incoming>
       <bpmn:outgoing>Flow_0lg5lm3</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:inclusiveGateway id="Gateway_003ldu7">
@@ -475,15 +476,20 @@
       <bpmn:incoming>Flow_0vwbt9h</bpmn:incoming>
       <bpmn:outgoing>Flow_1boberv</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:userTask id="Activity_1cjhmkf" name="Valutazione applicazione sconto" camunda:formKey="embedded:app:forms/valutazioneApplicazioneSconto.html" camunda:assignee="gestoreOrdini">
-      <bpmn:incoming>Flow_169hhtb</bpmn:incoming>
-      <bpmn:outgoing>Flow_0wi9wyo</bpmn:outgoing>
-    </bpmn:userTask>
     <bpmn:sequenceFlow id="Flow_1avcecm" sourceRef="Activity_052z89b" targetRef="Event_0yrowbx" />
     <bpmn:endEvent id="Event_0yrowbx">
       <bpmn:incoming>Flow_1avcecm</bpmn:incoming>
       <bpmn:terminateEventDefinition id="TerminateEventDefinition_0ux0ll0" />
     </bpmn:endEvent>
+    <bpmn:userTask id="Activity_1cjhmkf" name="Valutazione applicazione sconto" camunda:formKey="embedded:app:forms/valutazioneApplicazioneSconto.html" camunda:assignee="gestoreOrdini">
+      <bpmn:incoming>Flow_169hhtb</bpmn:incoming>
+      <bpmn:outgoing>Flow_0wi9wyo</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_0qsmvvw" sourceRef="Activity_1d3w0hw" targetRef="Gateway_07w172g" />
+    <bpmn:serviceTask id="Activity_1d3w0hw" name="Applicazione sconto" camunda:class="org.camunda.bpm.acme.gestione_ordini.ApplicazioneScontoDelegate">
+      <bpmn:incoming>Flow_0wi9wyo</bpmn:incoming>
+      <bpmn:outgoing>Flow_0qsmvvw</bpmn:outgoing>
+    </bpmn:serviceTask>
     <bpmn:textAnnotation id="TextAnnotation_0784num">
       <bpmn:text>Per ogni materiale richiesto è riportato il magazzino che lo possiede (se esiste)</bpmn:text>
     </bpmn:textAnnotation>
@@ -608,8 +614,7 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_169hhtb_di" bpmnElement="Flow_169hhtb">
         <di:waypoint x="2505" y="763" />
-        <di:waypoint x="2880" y="763" />
-        <di:waypoint x="2880" y="730" />
+        <di:waypoint x="2740" y="763" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="2688" y="744" width="12" height="14" />
         </bpmndi:BPMNLabel>
@@ -619,9 +624,8 @@
         <di:waypoint x="2220" y="623" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0wi9wyo_di" bpmnElement="Flow_0wi9wyo">
-        <di:waypoint x="2880" y="650" />
-        <di:waypoint x="2880" y="623" />
-        <di:waypoint x="2505" y="623" />
+        <di:waypoint x="2790" y="723" />
+        <di:waypoint x="2790" y="670" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0ok4xyc_di" bpmnElement="Flow_0ok4xyc">
         <di:waypoint x="2220" y="763" />
@@ -862,6 +866,10 @@
         <di:waypoint x="2875" y="1143" />
         <di:waypoint x="2875" y="2760" />
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0qsmvvw_di" bpmnElement="Flow_0qsmvvw">
+        <di:waypoint x="2740" y="623" />
+        <di:waypoint x="2505" y="623" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Activity_0vtd7v0_di" bpmnElement="Activity_0vtd7v0">
         <dc:Bounds x="2825" y="2760" width="100" height="80" />
       </bpmndi:BPMNShape>
@@ -1072,9 +1080,6 @@
       <bpmndi:BPMNShape id="Activity_0psb875_di" bpmnElement="Activity_04w0f38">
         <dc:Bounds x="710" y="723" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1cjhmkf_di" bpmnElement="Activity_1cjhmkf">
-        <dc:Bounds x="2830" y="650" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0txvmse_di" bpmnElement="Event_0yrowbx">
         <dc:Bounds x="1972" y="605" width="36" height="36" />
       </bpmndi:BPMNShape>
@@ -1095,6 +1100,12 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="TextAnnotation_1o3kgtn_di" bpmnElement="TextAnnotation_1o3kgtn">
         <dc:Bounds x="1410" y="975" width="160" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1cjhmkf_di" bpmnElement="Activity_1cjhmkf">
+        <dc:Bounds x="2740" y="723" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1d3w0hw_di" bpmnElement="Activity_1d3w0hw">
+        <dc:Bounds x="2740" y="590" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_14641ds_di" bpmnElement="Event_14641ds">
         <dc:Bounds x="5092" y="982" width="36" height="36" />
