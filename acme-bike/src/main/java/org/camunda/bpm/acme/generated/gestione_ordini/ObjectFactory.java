@@ -30,19 +30,35 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link NotificaCustomizzazioniNonRealizzabili }
+     * Create an instance of {@link SbloccoPrenotazioniComponentiAccessoriMagazzini }
      * 
      */
-    public NotificaCustomizzazioniNonRealizzabili createNotificaCustomizzazioniNonRealizzabili() {
-        return new NotificaCustomizzazioniNonRealizzabili();
+    public SbloccoPrenotazioniComponentiAccessoriMagazzini createSbloccoPrenotazioniComponentiAccessoriMagazzini() {
+        return new SbloccoPrenotazioniComponentiAccessoriMagazzini();
     }
 
     /**
-     * Create an instance of {@link PrenotazioneMaterialiPresentiMP }
+     * Create an instance of {@link RichiestaTrasferimentoMS }
      * 
      */
-    public PrenotazioneMaterialiPresentiMP createPrenotazioneMaterialiPresentiMP() {
-        return new PrenotazioneMaterialiPresentiMP();
+    public RichiestaTrasferimentoMS createRichiestaTrasferimentoMS() {
+        return new RichiestaTrasferimentoMS();
+    }
+
+    /**
+     * Create an instance of {@link RifiutoPreventivo }
+     * 
+     */
+    public RifiutoPreventivo createRifiutoPreventivo() {
+        return new RifiutoPreventivo();
+    }
+
+    /**
+     * Create an instance of {@link SbloccoPrenotazioniComponentiAccessoriMagazziniResponse }
+     * 
+     */
+    public SbloccoPrenotazioniComponentiAccessoriMagazziniResponse createSbloccoPrenotazioniComponentiAccessoriMagazziniResponse() {
+        return new SbloccoPrenotazioniComponentiAccessoriMagazziniResponse();
     }
 
     /**
@@ -54,11 +70,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetIdOrdineResponse }
+     * Create an instance of {@link RichiestaTrasferimentoMP }
      * 
      */
-    public GetIdOrdineResponse createGetIdOrdineResponse() {
-        return new GetIdOrdineResponse();
+    public RichiestaTrasferimentoMP createRichiestaTrasferimentoMP() {
+        return new RichiestaTrasferimentoMP();
     }
 
     /**
@@ -67,6 +83,22 @@ public class ObjectFactory {
      */
     public VerificaCustomizzazioni createVerificaCustomizzazioni() {
         return new VerificaCustomizzazioni();
+    }
+
+    /**
+     * Create an instance of {@link GetIdOrdineResponse }
+     * 
+     */
+    public GetIdOrdineResponse createGetIdOrdineResponse() {
+        return new GetIdOrdineResponse();
+    }
+
+    /**
+     * Create an instance of {@link RichiestaTrasferimentoMSResponse }
+     * 
+     */
+    public RichiestaTrasferimentoMSResponse createRichiestaTrasferimentoMSResponse() {
+        return new RichiestaTrasferimentoMSResponse();
     }
 
     /**
@@ -86,14 +118,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ApplicazioneSconto }
-     * 
-     */
-    public ApplicazioneSconto createApplicazioneSconto() {
-        return new ApplicazioneSconto();
-    }
-
-    /**
      * Create an instance of {@link PrenotazioneMaterialiPresentiMPResponse }
      * 
      */
@@ -102,19 +126,59 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetIdRivenditoreResponse }
-     * 
-     */
-    public GetIdRivenditoreResponse createGetIdRivenditoreResponse() {
-        return new GetIdRivenditoreResponse();
-    }
-
-    /**
      * Create an instance of {@link GenerazioneListaAccessoriPresentiMagazziniResponse }
      * 
      */
     public GenerazioneListaAccessoriPresentiMagazziniResponse createGenerazioneListaAccessoriPresentiMagazziniResponse() {
         return new GenerazioneListaAccessoriPresentiMagazziniResponse();
+    }
+
+    /**
+     * Create an instance of {@link NotificaCustomizzazioniNonRealizzabili }
+     * 
+     */
+    public NotificaCustomizzazioniNonRealizzabili createNotificaCustomizzazioniNonRealizzabili() {
+        return new NotificaCustomizzazioniNonRealizzabili();
+    }
+
+    /**
+     * Create an instance of {@link AccettaPreventivo }
+     * 
+     */
+    public AccettaPreventivo createAccettaPreventivo() {
+        return new AccettaPreventivo();
+    }
+
+    /**
+     * Create an instance of {@link PrenotazioneMaterialiPresentiMP }
+     * 
+     */
+    public PrenotazioneMaterialiPresentiMP createPrenotazioneMaterialiPresentiMP() {
+        return new PrenotazioneMaterialiPresentiMP();
+    }
+
+    /**
+     * Create an instance of {@link ApplicazioneSconto }
+     * 
+     */
+    public ApplicazioneSconto createApplicazioneSconto() {
+        return new ApplicazioneSconto();
+    }
+
+    /**
+     * Create an instance of {@link RichiestaTrasferimentoMPResponse }
+     * 
+     */
+    public RichiestaTrasferimentoMPResponse createRichiestaTrasferimentoMPResponse() {
+        return new RichiestaTrasferimentoMPResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetIdRivenditoreResponse }
+     * 
+     */
+    public GetIdRivenditoreResponse createGetIdRivenditoreResponse() {
+        return new GetIdRivenditoreResponse();
     }
 
     /**

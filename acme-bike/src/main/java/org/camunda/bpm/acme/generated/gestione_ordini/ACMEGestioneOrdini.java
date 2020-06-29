@@ -1,6 +1,7 @@
 
 package org.camunda.bpm.acme.generated.gestione_ordini;
 
+import javax.jws.Oneway;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -39,6 +40,86 @@ public interface ACMEGestioneOrdini {
      * 
      * @param body
      * @return
+     *     returns org.camunda.bpm.acme.generated.gestione_ordini.SbloccoPrenotazioniComponentiAccessoriMagazziniResponse
+     */
+    @WebMethod(action = "sbloccoPrenotazioniComponentiAccessoriMagazzini")
+    @WebResult(name = "sbloccoPrenotazioniComponentiAccessoriMagazziniResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+    public SbloccoPrenotazioniComponentiAccessoriMagazziniResponse sbloccoPrenotazioniComponentiAccessoriMagazzini(
+        @WebParam(name = "sbloccoPrenotazioniComponentiAccessoriMagazzini", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        SbloccoPrenotazioniComponentiAccessoriMagazzini body);
+
+    /**
+     * 
+     * @param body
+     */
+    @WebMethod(action = "accettaPreventivo")
+    @Oneway
+    public void accettaPreventivo(
+        @WebParam(name = "accettaPreventivo", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        AccettaPreventivo body);
+
+    /**
+     * 
+     * @param body
+     * @return
+     *     returns org.camunda.bpm.acme.generated.gestione_ordini.PrenotazioneMaterialiPresentiMPResponse
+     */
+    @WebMethod(action = "prenotazioneMaterialiPresentiMP")
+    @WebResult(name = "prenotazioneMaterialiPresentiMPResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+    public PrenotazioneMaterialiPresentiMPResponse prenotazioneMaterialiPresentiMP(
+        @WebParam(name = "prenotazioneMaterialiPresentiMP", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        PrenotazioneMaterialiPresentiMP body);
+
+    /**
+     * 
+     * @param body
+     * @return
+     *     returns org.camunda.bpm.acme.generated.gestione_ordini.RichiestaTrasferimentoMSResponse
+     */
+    @WebMethod(action = "richiestaTrasferimentoMS")
+    @WebResult(name = "richiestaTrasferimentoMSResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+    public RichiestaTrasferimentoMSResponse richiestaTrasferimentoMS(
+        @WebParam(name = "richiestaTrasferimentoMS", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        RichiestaTrasferimentoMS body);
+
+    /**
+     * 
+     * @param body
+     */
+    @WebMethod(action = "rifiutoPreventivo")
+    @Oneway
+    public void rifiutoPreventivo(
+        @WebParam(name = "rifiutoPreventivo", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        RifiutoPreventivo body);
+
+    /**
+     * 
+     * @param body
+     * @return
+     *     returns org.camunda.bpm.acme.generated.gestione_ordini.RichiestaTrasferimentoMPResponse
+     */
+    @WebMethod(action = "richiestaTrasferimentoMP")
+    @WebResult(name = "richiestaTrasferimentoMPResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+    public RichiestaTrasferimentoMPResponse richiestaTrasferimentoMP(
+        @WebParam(name = "richiestaTrasferimentoMP", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        RichiestaTrasferimentoMP body);
+
+    /**
+     * 
+     * @param body
+     * @return
+     *     returns org.camunda.bpm.acme.generated.gestione_ordini.VerificaCustomizzazioniResponse
+     */
+    @WebMethod(action = "verificaCustomizzazioni")
+    @WebResult(name = "verificaCustomizzazioniResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+    public VerificaCustomizzazioniResponse verificaCustomizzazioni(
+        @WebParam(name = "getIdOrdineResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        GetIdOrdineResponse body);
+
+    /**
+     * 
+     * @param body
+     * @return
      *     returns org.camunda.bpm.acme.generated.gestione_ordini.CalcoloPreventivoResponse
      */
     @WebMethod(action = "calcoloPreventivo")
@@ -63,18 +144,6 @@ public interface ACMEGestioneOrdini {
      * 
      * @param body
      * @return
-     *     returns org.camunda.bpm.acme.generated.gestione_ordini.PrenotazioneMaterialiPresentiMPResponse
-     */
-    @WebMethod(action = "prenotazioneMaterialiPresentiMP")
-    @WebResult(name = "prenotazioneMaterialiPresentiMPResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
-    public PrenotazioneMaterialiPresentiMPResponse prenotazioneMaterialiPresentiMP(
-        @WebParam(name = "prenotazioneMaterialiPresentiMP", targetNamespace = "mytest.test.com.xsd", partName = "body")
-        PrenotazioneMaterialiPresentiMP body);
-
-    /**
-     * 
-     * @param body
-     * @return
      *     returns org.camunda.bpm.acme.generated.gestione_ordini.InvioPreventivoResponse
      */
     @WebMethod(action = "invioPreventivo")
@@ -87,25 +156,13 @@ public interface ACMEGestioneOrdini {
      * 
      * @param body
      * @return
-     *     returns org.camunda.bpm.acme.generated.gestione_ordini.VerificaCustomizzazioni
+     *     returns org.camunda.bpm.acme.generated.gestione_ordini.GetIdOrdineResponse
      */
     @WebMethod(action = "getIdOrdine")
-    @WebResult(name = "verificaCustomizzazioni", targetNamespace = "mytest.test.com.xsd", partName = "body")
-    public VerificaCustomizzazioni getIdOrdine(
+    @WebResult(name = "getIdOrdineResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+    public GetIdOrdineResponse getIdOrdine(
         @WebParam(name = "getIdOrdine", targetNamespace = "mytest.test.com.xsd", partName = "body")
         GetIdOrdine body);
-
-    /**
-     * 
-     * @param body
-     * @return
-     *     returns org.camunda.bpm.acme.generated.gestione_ordini.VerificaCustomizzazioniResponse
-     */
-    @WebMethod(action = "verificaCustomizzazioni")
-    @WebResult(name = "verificaCustomizzazioniResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
-    public VerificaCustomizzazioniResponse verificaCustomizzazioni(
-        @WebParam(name = "verificaCustomizzazioni", targetNamespace = "mytest.test.com.xsd", partName = "body")
-        VerificaCustomizzazioni body);
 
     /**
      * 

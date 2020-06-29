@@ -4,6 +4,8 @@ import java.util.logging.Logger;
 
 import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdini;
 import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdiniService;
+import org.camunda.bpm.acme.generated.gestione_ordini.GetIdOrdine;
+import org.camunda.bpm.acme.generated.gestione_ordini.GetIdOrdineResponse;
 import org.camunda.bpm.acme.generated.gestione_ordini.PrenotazioneMaterialiPresentiMS;
 import org.camunda.bpm.acme.generated.gestione_ordini.PrenotazioneMaterialiPresentiMSResponse;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
@@ -18,14 +20,17 @@ public class PrenotazioneMaterialiPresentiMSDelegate implements JavaDelegate {
 
 		ACMEGestioneOrdini acmeGestioneOrdini = new ACMEGestioneOrdiniService().getACMEGestioneOrdiniServicePort();
 
-		PrenotazioneMaterialiPresentiMS body = new PrenotazioneMaterialiPresentiMS();
-		String idOrdine = (String) execution.getVariable("idOrdine");
-		body.setIdOrdine(idOrdine);
+		PrenotazioneMaterialiPresentiMS bodyPrenotazioneMaterialiPresentiMS = new PrenotazioneMaterialiPresentiMS();
+		GetIdOrdine body = null;
+		GetIdOrdineResponse idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
+		String idOrdine = idOrdineResponse.getIdOrdine();
+		LOGGER.info("[PrenotazioneMaterialiPresentiMSDelegate] idOrdine = " + idOrdine);
+		bodyPrenotazioneMaterialiPresentiMS.setIdOrdine(idOrdine);
 
 		PrenotazioneMaterialiPresentiMSResponse prenotazioneMaterialiPresentiMS = acmeGestioneOrdini
-				.prenotazioneMaterialiPresentiMS(body);
+				.prenotazioneMaterialiPresentiMS(bodyPrenotazioneMaterialiPresentiMS);
 
-		LOGGER.info("[PrenotazioneMaterialiPresentiMS] Message= " + prenotazioneMaterialiPresentiMS.getMessage());
+		LOGGER.info("[PrenotazioneMaterialiPresentiMSDelegate] Message= " + prenotazioneMaterialiPresentiMS.getMessage());
 	}
 
 }

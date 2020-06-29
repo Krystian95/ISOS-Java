@@ -21,10 +21,14 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="sogliaSconto" type="{http://www.w3.org/2001/XMLSchema}double"/>
  *         &lt;element name="spedizioniComponenti" type="{http://www.w3.org/2001/XMLSchema}double"/>
  *         &lt;element name="spedizioniAccessori" type="{http://www.w3.org/2001/XMLSchema}double"/>
+ *         &lt;element name="ordineContieneMaterialiDaOrdinareDaFornitore" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         &lt;element name="tuttiAccessoriPresentiNeiMagazzini" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="totaleCustomizzazioni" type="{http://www.w3.org/2001/XMLSchema}double"/>
  *         &lt;element name="totalePreventivo" type="{http://www.w3.org/2001/XMLSchema}double"/>
  *         &lt;element name="totaleAccessori" type="{http://www.w3.org/2001/XMLSchema}double"/>
+ *         &lt;element name="ordineContieneMaterialiPrenotatiMP" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="totaleCorriere" type="{http://www.w3.org/2001/XMLSchema}double"/>
+ *         &lt;element name="ordineContieneMaterialiPrenotatiMS" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -39,10 +43,14 @@ import javax.xml.bind.annotation.XmlType;
     "sogliaSconto",
     "spedizioniComponenti",
     "spedizioniAccessori",
+    "ordineContieneMaterialiDaOrdinareDaFornitore",
+    "tuttiAccessoriPresentiNeiMagazzini",
     "totaleCustomizzazioni",
     "totalePreventivo",
     "totaleAccessori",
-    "totaleCorriere"
+    "ordineContieneMaterialiPrenotatiMP",
+    "totaleCorriere",
+    "ordineContieneMaterialiPrenotatiMS"
 })
 @XmlRootElement(name = "calcoloPreventivoResponse")
 public class CalcoloPreventivoResponse {
@@ -51,10 +59,14 @@ public class CalcoloPreventivoResponse {
     protected double sogliaSconto;
     protected double spedizioniComponenti;
     protected double spedizioniAccessori;
+    protected boolean ordineContieneMaterialiDaOrdinareDaFornitore;
+    protected boolean tuttiAccessoriPresentiNeiMagazzini;
     protected double totaleCustomizzazioni;
     protected double totalePreventivo;
     protected double totaleAccessori;
+    protected boolean ordineContieneMaterialiPrenotatiMP;
     protected double totaleCorriere;
+    protected boolean ordineContieneMaterialiPrenotatiMS;
 
     /**
      * Recupera il valore della proprietà totaleCicli.
@@ -121,6 +133,38 @@ public class CalcoloPreventivoResponse {
     }
 
     /**
+     * Recupera il valore della proprietà ordineContieneMaterialiDaOrdinareDaFornitore.
+     * 
+     */
+    public boolean isOrdineContieneMaterialiDaOrdinareDaFornitore() {
+        return ordineContieneMaterialiDaOrdinareDaFornitore;
+    }
+
+    /**
+     * Imposta il valore della proprietà ordineContieneMaterialiDaOrdinareDaFornitore.
+     * 
+     */
+    public void setOrdineContieneMaterialiDaOrdinareDaFornitore(boolean value) {
+        this.ordineContieneMaterialiDaOrdinareDaFornitore = value;
+    }
+
+    /**
+     * Recupera il valore della proprietà tuttiAccessoriPresentiNeiMagazzini.
+     * 
+     */
+    public boolean isTuttiAccessoriPresentiNeiMagazzini() {
+        return tuttiAccessoriPresentiNeiMagazzini;
+    }
+
+    /**
+     * Imposta il valore della proprietà tuttiAccessoriPresentiNeiMagazzini.
+     * 
+     */
+    public void setTuttiAccessoriPresentiNeiMagazzini(boolean value) {
+        this.tuttiAccessoriPresentiNeiMagazzini = value;
+    }
+
+    /**
      * Recupera il valore della proprietà totaleCustomizzazioni.
      * 
      */
@@ -169,6 +213,22 @@ public class CalcoloPreventivoResponse {
     }
 
     /**
+     * Recupera il valore della proprietà ordineContieneMaterialiPrenotatiMP.
+     * 
+     */
+    public boolean isOrdineContieneMaterialiPrenotatiMP() {
+        return ordineContieneMaterialiPrenotatiMP;
+    }
+
+    /**
+     * Imposta il valore della proprietà ordineContieneMaterialiPrenotatiMP.
+     * 
+     */
+    public void setOrdineContieneMaterialiPrenotatiMP(boolean value) {
+        this.ordineContieneMaterialiPrenotatiMP = value;
+    }
+
+    /**
      * Recupera il valore della proprietà totaleCorriere.
      * 
      */
@@ -182,6 +242,22 @@ public class CalcoloPreventivoResponse {
      */
     public void setTotaleCorriere(double value) {
         this.totaleCorriere = value;
+    }
+
+    /**
+     * Recupera il valore della proprietà ordineContieneMaterialiPrenotatiMS.
+     * 
+     */
+    public boolean isOrdineContieneMaterialiPrenotatiMS() {
+        return ordineContieneMaterialiPrenotatiMS;
+    }
+
+    /**
+     * Imposta il valore della proprietà ordineContieneMaterialiPrenotatiMS.
+     * 
+     */
+    public void setOrdineContieneMaterialiPrenotatiMS(boolean value) {
+        this.ordineContieneMaterialiPrenotatiMS = value;
     }
 
 }

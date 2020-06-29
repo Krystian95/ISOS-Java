@@ -1,4 +1,5 @@
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\assemblaggio\RichiestaTrasferimentoMPDelegate.java
+C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\RichiestaTrasferimentoMPResponse.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\gestione_ordini\VerificaSaldoConSistemaBancarioDelegate.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\magazzini\PrenotazioneMaterialiPresentiMSDelegate.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\magazzini\GenerazioneListaMaterialiPresentiMPDelegate.java
@@ -6,6 +7,7 @@ C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\gestione_ordini\ApplicazioneScontoDelegate.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\CalcoloPreventivo.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\GetIdOrdine.java
+C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\RichiestaTrasferimentoMP.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\GenerazioneListaAccessoriPresentiMagazziniResponse.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\assemblaggio\RicezioneMaterialiMPDelegate.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\assemblaggio\RicezioneMaterialiMSDelegate.java
@@ -13,14 +15,18 @@ C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\GetIdOrdineResponse.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\magazzini\InvioMaterialiMSDelegate.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\VerificaCustomizzazioniResponse.java
+C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\AccettaPreventivo.java
+C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\RifiutoPreventivo.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\magazzini\InviaOrdineCorriereDelegate.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\GenerazioneListaAccessoriPresentiMagazzini.java
+C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\RichiestaTrasferimentoMS.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\magazzini\GenerazioneListaAccessoriPresentiMagazziniDelegate.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\magazzini\GenerazioneListaMaterialiPresentiMSDelegate.java
-C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\assemblaggio\RichiestaVerificaMaterialiMSDelegate.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\package-info.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\magazzini\PrenotazioneMaterialiPresentiMPDelegate.java
+C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\assemblaggio\RichiestaTrasferimentoMSDelegate.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\CalcoloPreventivoResponse.java
+C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\RichiestaTrasferimentoMSResponse.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\assemblaggio\AssemblaggioCicliAccessoriDelegate.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\gestione_ordini\VerificaCustomizzazioniDelegate.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\assemblaggio\InvioOrdineCorriereDelegate.java
@@ -28,6 +34,7 @@ C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\ACMEGestioneOrdini.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\magazzini\SceltaMagazzinoPiuVicinoSedeClienteDelegate.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\InvioPreventivo.java
+C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\SbloccoPrenotazioniComponentiAccessoriMagazziniResponse.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\NotificaCustomizzazioniNonRealizzabili.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\VerificaCustomizzazioni.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\NotificaCustomizzazioniNonRealizzabiliResponse.java
@@ -35,6 +42,7 @@ C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\magazzini\InvioMaterialiMPDelegate.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\magazzini\RicezioneRichiestaTrasferimentoMPDelegate.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\InvioPreventivoResponse.java
+C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\SbloccoPrenotazioniComponentiAccessoriMagazzini.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\gestione_ordini\VerificaAnticipoConSistemaBancarioDelegate.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\assemblaggio\InvioOrdineMaterialiNonPresentiFornitoreDelegate.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\ApplicazioneScontoResponse.java

@@ -4,6 +4,8 @@ import java.util.logging.Logger;
 
 import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdini;
 import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdiniService;
+import org.camunda.bpm.acme.generated.gestione_ordini.GetIdOrdine;
+import org.camunda.bpm.acme.generated.gestione_ordini.GetIdOrdineResponse;
 import org.camunda.bpm.acme.generated.gestione_ordini.GetIdRivenditore;
 import org.camunda.bpm.acme.generated.gestione_ordini.GetIdRivenditoreResponse;
 import org.camunda.bpm.acme.generated.gestione_ordini.InvioPreventivo;
@@ -21,23 +23,24 @@ public class InvioPreventivoDelegate implements JavaDelegate {
 
 		ACMEGestioneOrdini acmeGestioneOrdini = new ACMEGestioneOrdiniService().getACMEGestioneOrdiniServicePort();
 		
-		InvioPreventivo body = new InvioPreventivo();
+		GetIdOrdine body = null;
+		GetIdOrdineResponse idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
+		String idOrdine = idOrdineResponse.getIdOrdine();
+		LOGGER.info("[InvioPreventivoDelegate] idOrdine = " + idOrdine);
 		
-		String idOrdine = (String) execution.getVariable("idOrdine");
 		String idRivenditore = null;
 
-		body.setIdOrdine(idOrdine);
+		InvioPreventivo bodyInvioPreventivo = new InvioPreventivo();
+		bodyInvioPreventivo.setIdOrdine(idOrdine);
 
 		GetIdRivenditore bodyGetIdRivenditore = new GetIdRivenditore();
 		bodyGetIdRivenditore.setIdOrdine(idOrdine);
-
 		GetIdRivenditoreResponse getIdRivenditore = acmeGestioneOrdini.getIdRivenditore(bodyGetIdRivenditore);
-
 		idRivenditore = getIdRivenditore.getIdRivenditore();
-		body.setIdRivenditore(idRivenditore);
+		bodyInvioPreventivo.setIdRivenditore(idRivenditore);
 		
-		InvioPreventivoResponse InvioPreventivo = acmeGestioneOrdini.invioPreventivo(body);
-		LOGGER.info("[InvioPreventivo] Message= "+ InvioPreventivo.getMessage());
+		InvioPreventivoResponse InvioPreventivo = acmeGestioneOrdini.invioPreventivo(bodyInvioPreventivo);
+		LOGGER.info("[InvioPreventivoDelegate] Message= "+ InvioPreventivo.getMessage());
 	}
 
 }

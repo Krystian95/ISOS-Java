@@ -6,6 +6,8 @@ import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdini;
 import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdiniService;
 import org.camunda.bpm.acme.generated.gestione_ordini.ApplicazioneSconto;
 import org.camunda.bpm.acme.generated.gestione_ordini.ApplicazioneScontoResponse;
+import org.camunda.bpm.acme.generated.gestione_ordini.GetIdOrdine;
+import org.camunda.bpm.acme.generated.gestione_ordini.GetIdOrdineResponse;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
@@ -19,12 +21,17 @@ public class ApplicazioneScontoDelegate implements JavaDelegate {
 
 		ACMEGestioneOrdini acmeGestioneOrdini = new ACMEGestioneOrdiniService().getACMEGestioneOrdiniServicePort();
 
-		ApplicazioneSconto body = new ApplicazioneSconto();
-		body.setIdOrdine((String) execution.getVariable("idOrdine"));
-		body.setPercentualeSconto((String) execution.getVariable("percentualeSconto"));
+		GetIdOrdine body = null;
+		GetIdOrdineResponse idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
+		String idOrdine = idOrdineResponse.getIdOrdine();
+		LOGGER.info("[ApplicazioneScontoDelegate] idOrdine = " + idOrdine);
+		
+		ApplicazioneSconto bodyApplicazioneSconto = new ApplicazioneSconto();
+		bodyApplicazioneSconto.setIdOrdine(idOrdine);
+		bodyApplicazioneSconto.setPercentualeSconto((String) execution.getVariable("percentualeSconto"));
 
-		ApplicazioneScontoResponse ApplicazioneSconto = acmeGestioneOrdini.applicazioneSconto(body);
-		LOGGER.info("[ApplicazioneSconto] Message= "+ ApplicazioneSconto.getMessage());
+		ApplicazioneScontoResponse ApplicazioneSconto = acmeGestioneOrdini.applicazioneSconto(bodyApplicazioneSconto);
+		LOGGER.info("[ApplicazioneScontoDelegate] Message= "+ ApplicazioneSconto.getMessage());
 		
 	}
 

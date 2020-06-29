@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdini;
 import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdiniService;
 import org.camunda.bpm.acme.generated.gestione_ordini.GetIdOrdine;
+import org.camunda.bpm.acme.generated.gestione_ordini.GetIdOrdineResponse;
 import org.camunda.bpm.acme.generated.gestione_ordini.VerificaCustomizzazioni;
 import org.camunda.bpm.acme.generated.gestione_ordini.VerificaCustomizzazioniResponse;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
@@ -21,10 +22,15 @@ public class VerificaCustomizzazioniDelegate implements JavaDelegate {
 		ACMEGestioneOrdini acmeGestioneOrdini = new ACMEGestioneOrdiniService().getACMEGestioneOrdiniServicePort();
 
 		GetIdOrdine body = null;
-
-		VerificaCustomizzazioni idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
-
+		LOGGER.info("[VerificaCustomizzazioniDelegate] 1");
+		GetIdOrdineResponse idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
+		LOGGER.info("[VerificaCustomizzazioniDelegate] 2");
 		String idOrdine = idOrdineResponse.getIdOrdine();
+		
+		//OLD
+		//GetIdOrdine body = null;
+		//VerificaCustomizzazioni idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
+		
 
 		LOGGER.info("[VerificaCustomizzazioniDelegate] idOrdineResponse = " + idOrdine);
 
@@ -32,8 +38,8 @@ public class VerificaCustomizzazioniDelegate implements JavaDelegate {
 		bodyVerificaCustomizzazioni.setIdOrdine(idOrdine);
 
 		VerificaCustomizzazioniResponse verificaCustomizzazioni = acmeGestioneOrdini
-				.verificaCustomizzazioni(bodyVerificaCustomizzazioni);
-
+				.verificaCustomizzazioni(idOrdineResponse);
+	
 		LOGGER.info("[VerificaCustomizzazioniDelegate] customizzazioniPossibili = "
 				+ verificaCustomizzazioni.isCustomizzazioniPossibili());
 

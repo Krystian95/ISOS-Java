@@ -6,6 +6,8 @@ import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdini;
 import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdiniService;
 import org.camunda.bpm.acme.generated.gestione_ordini.CalcoloPreventivo;
 import org.camunda.bpm.acme.generated.gestione_ordini.CalcoloPreventivoResponse;
+import org.camunda.bpm.acme.generated.gestione_ordini.GetIdOrdine;
+import org.camunda.bpm.acme.generated.gestione_ordini.GetIdOrdineResponse;
 import org.camunda.bpm.acme.generated.gestione_ordini.GetIdRivenditore;
 import org.camunda.bpm.acme.generated.gestione_ordini.GetIdRivenditoreResponse;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
@@ -20,36 +22,36 @@ public class CalcoloPreventivoDelegate implements JavaDelegate {
 
 		ACMEGestioneOrdini acmeGestioneOrdini = new ACMEGestioneOrdiniService().getACMEGestioneOrdiniServicePort();
 
-		CalcoloPreventivo body = new CalcoloPreventivo();
-		String idOrdine = (String) execution.getVariable("idOrdine");
+		GetIdOrdine body = null;
+		GetIdOrdineResponse idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
+		String idOrdine = idOrdineResponse.getIdOrdine();
+		LOGGER.info("[CalcoloPreventivoDelegate] idOrdine = " + idOrdine);
+
+		CalcoloPreventivo bodyCalcoloPreventivo = new CalcoloPreventivo();
+		bodyCalcoloPreventivo.setIdOrdine(idOrdine);
+		
 		String idRivenditore = null;
-
-		body.setIdOrdine(idOrdine);
-
 		GetIdRivenditore bodyGetIdRivenditore = new GetIdRivenditore();
 		bodyGetIdRivenditore.setIdOrdine(idOrdine);
-
 		GetIdRivenditoreResponse getIdRivenditore = acmeGestioneOrdini.getIdRivenditore(bodyGetIdRivenditore);
-
 		idRivenditore = getIdRivenditore.getIdRivenditore();
-		body.setIdRivenditore(idRivenditore);
+		bodyCalcoloPreventivo.setIdRivenditore(idRivenditore);
 		execution.setVariable("idRivenditore", idRivenditore);
-		
-		//LOGGER.info("VEDI QUA ID ORDINE: "+idOrdine);
-		//LOGGER.info("VEDI QUA ID RIVENDITORE: "+idRivenditore);
 
-		CalcoloPreventivoResponse CalcoloPreventivo = acmeGestioneOrdini.calcoloPreventivo(body);
+		CalcoloPreventivoResponse CalcoloPreventivo = acmeGestioneOrdini.calcoloPreventivo(bodyCalcoloPreventivo);
 
 		execution.setVariable("totalePreventivo", CalcoloPreventivo.getTotalePreventivo());
 		execution.setVariable("sogliaSconto", CalcoloPreventivo.getSogliaSconto());
 
-		LOGGER.info("[CalcoloPreventivo] Message= Calcolo preventivo effettuato. Totale: "
+		LOGGER.info("[CalcoloPreventivoDelegate] Message= Calcolo preventivo effettuato. Totale: "
 				+ CalcoloPreventivo.getTotalePreventivo() + ", soglia sconto: " + CalcoloPreventivo.getSogliaSconto());
 
-		//execution.setVariable("totalePreventivo", 1200.00);
-		execution.setVariable("ordineContieneMaterialiPrenotatiMP", true);
-		execution.setVariable("ordineContieneMaterialiDaOrdinareDaFornitore", true);
-		execution.setVariable("ordineContieneMaterialiPrenotatiMS", true);
+		execution.setVariable("ordineContieneMaterialiPrenotatiMP",
+				CalcoloPreventivo.isOrdineContieneMaterialiPrenotatiMP());
+		execution.setVariable("ordineContieneMaterialiPrenotatiMS",
+				CalcoloPreventivo.isOrdineContieneMaterialiPrenotatiMS());
+		execution.setVariable("ordineContieneMaterialiDaOrdinareDaFornitore",
+				CalcoloPreventivo.isOrdineContieneMaterialiDaOrdinareDaFornitore());
 	}
 
 }

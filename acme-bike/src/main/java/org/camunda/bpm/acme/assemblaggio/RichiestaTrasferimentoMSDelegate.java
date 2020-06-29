@@ -6,32 +6,30 @@ import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdini;
 import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdiniService;
 import org.camunda.bpm.acme.generated.gestione_ordini.GetIdOrdine;
 import org.camunda.bpm.acme.generated.gestione_ordini.GetIdOrdineResponse;
-import org.camunda.bpm.acme.generated.gestione_ordini.RichiestaTrasferimentoMP;
-import org.camunda.bpm.acme.generated.gestione_ordini.RichiestaTrasferimentoMPResponse;
+import org.camunda.bpm.acme.generated.gestione_ordini.RichiestaTrasferimentoMS;
+import org.camunda.bpm.acme.generated.gestione_ordini.RichiestaTrasferimentoMSResponse;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
-public class RichiestaTrasferimentoMPDelegate implements JavaDelegate {
+public class RichiestaTrasferimentoMSDelegate implements JavaDelegate {
 
   private final static Logger LOGGER = Logger.getLogger("ASSEMBLAGGIO");
-  int[] ElencoAccessoriComponentiNecessari;
   
   public void execute(DelegateExecution execution) throws Exception {
-	  LOGGER.info("ASSEMBLAGGIO - Mando la richiesta per trasferire i materiali disponibili nel MP in assemblaggio.");
+	  LOGGER.info("ASSEMBLAGGIO - Mando la richiesta per trasferire i materiali disponibili nel MS in assemblaggio.");
 	  
 	  ACMEGestioneOrdini acmeGestioneOrdini = new ACMEGestioneOrdiniService().getACMEGestioneOrdiniServicePort();
 	  
 	  GetIdOrdine body = null;
 	  GetIdOrdineResponse idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
 	  String idOrdine = idOrdineResponse.getIdOrdine();
-	  LOGGER.info("[RichiestaTrasferimentoMPDelegate] idOrdine = " + idOrdine);
+	  LOGGER.info("[RichiestaTrasferimentoMSDelegate] idOrdine = " + idOrdine);
 	  
-	  RichiestaTrasferimentoMP bodyRichiestaTrasferimentoMP = new RichiestaTrasferimentoMP();
-	  bodyRichiestaTrasferimentoMP.setIdOrdine(idOrdine);
+	  RichiestaTrasferimentoMS bodyRichiestaTrasferimentoMS = new RichiestaTrasferimentoMS();
+	  bodyRichiestaTrasferimentoMS.setIdOrdine(idOrdine);
 	  
-	  RichiestaTrasferimentoMPResponse RichiestaTrasferimentoMP = acmeGestioneOrdini.richiestaTrasferimentoMP(bodyRichiestaTrasferimentoMP);
-	  LOGGER.info("[RichiestaTrasferimentoMPDelegate] Message= "+ RichiestaTrasferimentoMP.getMessage());
-	  
+	  RichiestaTrasferimentoMSResponse RichiestaTrasferimentoMS = acmeGestioneOrdini.richiestaTrasferimentoMS(bodyRichiestaTrasferimentoMS);
+	  LOGGER.info("[RichiestaTrasferimentoMSDelegate] Message= Richiesta trasferimento dal MS effettuata."+ RichiestaTrasferimentoMS.getMessage());
   }
 
 }

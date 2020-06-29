@@ -98,7 +98,6 @@
         <bpmn:flowNodeRef>Gateway_1xs5m0z</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_1bxjvha</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_048cdbg</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_1wgp4ve</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_1ddziyi</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_08o36hu</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_12abo0q</bpmn:flowNodeRef>
@@ -123,6 +122,7 @@
         <bpmn:flowNodeRef>Event_0yrowbx</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1cjhmkf</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1d3w0hw</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_1wgp4ve</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
     <bpmn:sequenceFlow id="Flow_05lk57g" sourceRef="Activity_02dnfjs" targetRef="Activity_0vtd7v0" />
@@ -142,7 +142,7 @@
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${ordineContieneMaterialiPrenotatiMP == true}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_1bw973e" name="Si" sourceRef="Gateway_1ddziyi" targetRef="Gateway_1tsf4ux">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${esistonoAccessoriDaNonAssemblareOAssemblareFacilmente == true}</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${ordineContieneAccessoriDaNonAssemblare == true}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_15hl7o7" name="Elenco componenti/accessori necessari da assemblare" sourceRef="Activity_0snn2wy" targetRef="Activity_0blh8hr" />
     <bpmn:sequenceFlow id="Flow_1frfl1u" sourceRef="Activity_1tlhy05" targetRef="Gateway_1bp9c8o" />
@@ -174,7 +174,7 @@
     <bpmn:sequenceFlow id="Flow_0ioruk7" sourceRef="Event_0tfo57d" targetRef="Gateway_1bxjvha" />
     <bpmn:sequenceFlow id="Flow_15k0ob5" sourceRef="Event_0rbjra5" targetRef="Event_1wgp4ve" />
     <bpmn:sequenceFlow id="Flow_1ha1046" name="No" sourceRef="Gateway_1ddziyi" targetRef="Event_08o36hu">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${esistonoAccessoriDaNonAssemblareOAssemblareFacilmente == false}</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${ordineContieneAccessoriDaNonAssemblare == false}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_0emam7t" sourceRef="Event_02p8v8b" targetRef="Activity_12abo0q" />
     <bpmn:sequenceFlow id="Flow_0frxnox" sourceRef="Activity_1bu8x7d" targetRef="Activity_1euuy3r" />
@@ -432,9 +432,6 @@
       <bpmn:outgoing>Flow_1bw973e</bpmn:outgoing>
       <bpmn:outgoing>Flow_1ha1046</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:endEvent id="Event_1wgp4ve" name="Ordine evaso">
-      <bpmn:incoming>Flow_15k0ob5</bpmn:incoming>
-    </bpmn:endEvent>
     <bpmn:serviceTask id="Activity_048cdbg" name="Verifica saldo con sistema bancario" camunda:class="org.camunda.bpm.acme.gestione_ordini.VerificaSaldoConSistemaBancarioDelegate">
       <bpmn:incoming>Flow_04iiftv</bpmn:incoming>
     </bpmn:serviceTask>
@@ -490,6 +487,9 @@
       <bpmn:incoming>Flow_0wi9wyo</bpmn:incoming>
       <bpmn:outgoing>Flow_0qsmvvw</bpmn:outgoing>
     </bpmn:serviceTask>
+    <bpmn:endEvent id="Event_1wgp4ve" name="Ordine evaso">
+      <bpmn:incoming>Flow_15k0ob5</bpmn:incoming>
+    </bpmn:endEvent>
     <bpmn:textAnnotation id="TextAnnotation_0784num">
       <bpmn:text>Per ogni materiale richiesto è riportato il magazzino che lo possiede (se esiste)</bpmn:text>
     </bpmn:textAnnotation>
@@ -545,6 +545,10 @@
       <bpmndi:BPMNShape id="Lane_0qvkgm8_di" bpmnElement="Lane_0qvkgm8" isHorizontal="true">
         <dc:Bounds x="200" y="2110" width="6050" height="1000" />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0qsmvvw_di" bpmnElement="Flow_0qsmvvw">
+        <di:waypoint x="2740" y="623" />
+        <di:waypoint x="2505" y="623" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1avcecm_di" bpmnElement="Flow_1avcecm">
         <di:waypoint x="2120" y="623" />
         <di:waypoint x="2008" y="623" />
@@ -714,9 +718,8 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_15k0ob5_di" bpmnElement="Flow_15k0ob5">
-        <di:waypoint x="5590" y="745" />
-        <di:waypoint x="5590" y="723" />
-        <di:waypoint x="5732" y="723" />
+        <di:waypoint x="5608" y="763" />
+        <di:waypoint x="5732" y="763" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0ioruk7_di" bpmnElement="Flow_0ioruk7">
         <di:waypoint x="5320" y="608" />
@@ -865,10 +868,6 @@
       <bpmndi:BPMNEdge id="Flow_05lk57g_di" bpmnElement="Flow_05lk57g">
         <di:waypoint x="2875" y="1143" />
         <di:waypoint x="2875" y="2760" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0qsmvvw_di" bpmnElement="Flow_0qsmvvw">
-        <di:waypoint x="2740" y="623" />
-        <di:waypoint x="2505" y="623" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Activity_0vtd7v0_di" bpmnElement="Activity_0vtd7v0">
         <dc:Bounds x="2825" y="2760" width="100" height="80" />
@@ -1041,12 +1040,6 @@
           <dc:Bounds x="5795" y="965" width="90" height="66" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1wgp4ve_di" bpmnElement="Event_1wgp4ve">
-        <dc:Bounds x="5732" y="705" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="5717" y="751" width="66" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_048cdbg_di" bpmnElement="Activity_048cdbg">
         <dc:Bounds x="5490" y="683" width="100" height="80" />
       </bpmndi:BPMNShape>
@@ -1083,6 +1076,12 @@
       <bpmndi:BPMNShape id="Event_0txvmse_di" bpmnElement="Event_0yrowbx">
         <dc:Bounds x="1972" y="605" width="36" height="36" />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1cjhmkf_di" bpmnElement="Activity_1cjhmkf">
+        <dc:Bounds x="2740" y="723" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1d3w0hw_di" bpmnElement="Activity_1d3w0hw">
+        <dc:Bounds x="2740" y="590" width="100" height="80" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="TextAnnotation_0784num_di" bpmnElement="TextAnnotation_0784num">
         <dc:Bounds x="2790" y="2890" width="170" height="54" />
       </bpmndi:BPMNShape>
@@ -1101,11 +1100,11 @@
       <bpmndi:BPMNShape id="TextAnnotation_1o3kgtn_di" bpmnElement="TextAnnotation_1o3kgtn">
         <dc:Bounds x="1410" y="975" width="160" height="50" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1cjhmkf_di" bpmnElement="Activity_1cjhmkf">
-        <dc:Bounds x="2740" y="723" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1d3w0hw_di" bpmnElement="Activity_1d3w0hw">
-        <dc:Bounds x="2740" y="590" width="100" height="80" />
+      <bpmndi:BPMNShape id="Event_1wgp4ve_di" bpmnElement="Event_1wgp4ve">
+        <dc:Bounds x="5732" y="745" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="5717" y="791" width="66" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_14641ds_di" bpmnElement="Event_14641ds">
         <dc:Bounds x="5092" y="982" width="36" height="36" />
