@@ -111,18 +111,18 @@
         <bpmn:flowNodeRef>Gateway_058r2z1</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1hvdfr3</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_052z89b</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_1xwyy0c</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_1cr6m8k</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0tfo57d</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_14641ds</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0rbjra5</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_1dpdk45</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0ftwc2c</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_04w0f38</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_0yrowbx</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1cjhmkf</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1d3w0hw</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_1wgp4ve</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0yrowbx</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_1xwyy0c</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_1cr6m8k</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
     <bpmn:sequenceFlow id="Flow_05lk57g" sourceRef="Activity_02dnfjs" targetRef="Activity_0vtd7v0" />
@@ -246,14 +246,6 @@
     <bpmn:intermediateCatchEvent id="Event_0tfo57d" name="Ricezione ricevuta saldo">
       <bpmn:outgoing>Flow_0ioruk7</bpmn:outgoing>
       <bpmn:messageEventDefinition id="MessageEventDefinition_0ndhbuw" messageRef="Message_17c31ps" />
-    </bpmn:intermediateCatchEvent>
-    <bpmn:intermediateCatchEvent id="Event_1cr6m8k" name="Ricezione rifiuto preventivo">
-      <bpmn:outgoing>Flow_0526z15</bpmn:outgoing>
-      <bpmn:messageEventDefinition id="MessageEventDefinition_0rnk023" messageRef="Message_1kcwpch" />
-    </bpmn:intermediateCatchEvent>
-    <bpmn:intermediateCatchEvent id="Event_1xwyy0c" name="Ricezione accettazione preventivo">
-      <bpmn:outgoing>Flow_1soi4bk</bpmn:outgoing>
-      <bpmn:messageEventDefinition id="MessageEventDefinition_11faito" messageRef="Message_0oyf2y3" />
     </bpmn:intermediateCatchEvent>
     <bpmn:endEvent id="Event_0vv4mx0">
       <bpmn:incoming>Flow_1pb3lx9</bpmn:incoming>
@@ -474,10 +466,6 @@
       <bpmn:outgoing>Flow_1boberv</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="Flow_1avcecm" sourceRef="Activity_052z89b" targetRef="Event_0yrowbx" />
-    <bpmn:endEvent id="Event_0yrowbx">
-      <bpmn:incoming>Flow_1avcecm</bpmn:incoming>
-      <bpmn:terminateEventDefinition id="TerminateEventDefinition_0ux0ll0" />
-    </bpmn:endEvent>
     <bpmn:userTask id="Activity_1cjhmkf" name="Valutazione applicazione sconto" camunda:formKey="embedded:app:forms/valutazioneApplicazioneSconto.html" camunda:assignee="gestoreOrdini">
       <bpmn:incoming>Flow_169hhtb</bpmn:incoming>
       <bpmn:outgoing>Flow_0wi9wyo</bpmn:outgoing>
@@ -490,6 +478,17 @@
     <bpmn:endEvent id="Event_1wgp4ve" name="Ordine evaso">
       <bpmn:incoming>Flow_15k0ob5</bpmn:incoming>
     </bpmn:endEvent>
+    <bpmn:endEvent id="Event_0yrowbx">
+      <bpmn:incoming>Flow_1avcecm</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:startEvent id="Event_1xwyy0c" name="Ricezione accettazione preventivo">
+      <bpmn:outgoing>Flow_1soi4bk</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0525zn5" messageRef="Message_0oyf2y3" />
+    </bpmn:startEvent>
+    <bpmn:startEvent id="Event_1cr6m8k" name="Ricezione rifiuto preventivo">
+      <bpmn:outgoing>Flow_0526z15</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_1wcoyeo" messageRef="Message_1kcwpch" />
+    </bpmn:startEvent>
     <bpmn:textAnnotation id="TextAnnotation_0784num">
       <bpmn:text>Per ogni materiale richiesto è riportato il magazzino che lo possiede (se esiste)</bpmn:text>
     </bpmn:textAnnotation>
@@ -884,18 +883,6 @@
           <dc:Bounds x="5202" y="577" width="90" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1cr6m8k_di" bpmnElement="Event_1cr6m8k">
-        <dc:Bounds x="2462" y="1085" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="2373" y="1089" width="79" height="27" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1xwyy0c_di" bpmnElement="Event_1xwyy0c">
-        <dc:Bounds x="3382" y="745" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="3310" y="743" width="62" height="40" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0vv4mx0_di" bpmnElement="Event_0vv4mx0">
         <dc:Bounds x="2462" y="2559" width="36" height="36" />
       </bpmndi:BPMNShape>
@@ -1073,14 +1060,17 @@
       <bpmndi:BPMNShape id="Activity_0psb875_di" bpmnElement="Activity_04w0f38">
         <dc:Bounds x="710" y="723" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0txvmse_di" bpmnElement="Event_0yrowbx">
-        <dc:Bounds x="1972" y="605" width="36" height="36" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1cjhmkf_di" bpmnElement="Activity_1cjhmkf">
         <dc:Bounds x="2740" y="723" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1d3w0hw_di" bpmnElement="Activity_1d3w0hw">
         <dc:Bounds x="2740" y="590" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1wgp4ve_di" bpmnElement="Event_1wgp4ve">
+        <dc:Bounds x="5732" y="745" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="5717" y="791" width="66" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="TextAnnotation_0784num_di" bpmnElement="TextAnnotation_0784num">
         <dc:Bounds x="2790" y="2890" width="170" height="54" />
@@ -1100,10 +1090,19 @@
       <bpmndi:BPMNShape id="TextAnnotation_1o3kgtn_di" bpmnElement="TextAnnotation_1o3kgtn">
         <dc:Bounds x="1410" y="975" width="160" height="50" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1wgp4ve_di" bpmnElement="Event_1wgp4ve">
-        <dc:Bounds x="5732" y="745" width="36" height="36" />
+      <bpmndi:BPMNShape id="Event_1pb16xx_di" bpmnElement="Event_0yrowbx">
+        <dc:Bounds x="1972" y="605" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_14rb27j_di" bpmnElement="Event_1xwyy0c">
+        <dc:Bounds x="3382" y="745" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="5717" y="791" width="66" height="14" />
+          <dc:Bounds x="3310" y="743" width="62" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0680r6a_di" bpmnElement="Event_1cr6m8k">
+        <dc:Bounds x="2462" y="1085" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2373" y="1089" width="79" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_14641ds_di" bpmnElement="Event_14641ds">
