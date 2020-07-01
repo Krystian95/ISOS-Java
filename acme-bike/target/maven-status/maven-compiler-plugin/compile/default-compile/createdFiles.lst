@@ -1,9 +1,10 @@
 org\camunda\bpm\acme\generated\gestione_ordini\VerificaCustomizzazioniResponse.class
 org\camunda\bpm\acme\magazzini\InviaOrdineAccessorioFornitoreDelegate.class
 org\camunda\bpm\acme\generated\gestione_ordini\ApplicazioneSconto.class
-org\camunda\bpm\acme\generated\gestione_ordini\GetOrderVariablesResponse.class
+org\camunda\bpm\acme\generated\gestione_ordini\RecuperoVariabiliSessioneResponse.class
 org\camunda\bpm\acme\assemblaggio\InvioOrdineMaterialiNonPresentiFornitoreDelegate.class
 org\camunda\bpm\acme\gestione_ordini\InvioPreventivoDelegate.class
+org\camunda\bpm\acme\gestione_ordini\RecuperoVariabiliSessioneDelegate.class
 org\camunda\bpm\acme\assemblaggio\RicezioneMaterialiMSDelegate.class
 org\camunda\bpm\acme\generated\gestione_ordini\ApplicazioneScontoResponse.class
 org\camunda\bpm\acme\magazzini\SceltaMagazzinoPiuVicinoSedeClienteDelegate.class
@@ -38,10 +39,9 @@ org\camunda\bpm\acme\magazzini\InvioMaterialiMPDelegate.class
 org\camunda\bpm\acme\magazzini\RicezioneRichiestaTrasferimentoMSDelegate.class
 org\camunda\bpm\acme\assemblaggio\InvioOrdineCorriereDelegate.class
 org\camunda\bpm\acme\generated\gestione_ordini\CalcoloPreventivoResponse.class
-org\camunda\bpm\acme\generated\gestione_ordini\GetOrderVariables.class
-org\camunda\bpm\acme\gestione_ordini\RipristinoVariabiliSessioneDelegate.class
 org\camunda\bpm\acme\generated\gestione_ordini\VerificaCustomizzazioni.class
 org\camunda\bpm\acme\assemblaggio\AssemblaggioCicliAccessoriDelegate.class
+org\camunda\bpm\acme\generated\gestione_ordini\RecuperoVariabiliSessione.class
 org\camunda\bpm\acme\gestione_ordini\InvioNotificaCustomizzazioniNonRealizzabiliDelegate.class
 org\camunda\bpm\acme\generated\gestione_ordini\PrenotazioneMaterialiPresentiMP.class
 org\camunda\bpm\acme\gestione_ordini\RichiestaVerificaMaterialiMSDelegate.class
