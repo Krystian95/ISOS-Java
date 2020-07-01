@@ -47,27 +47,27 @@ public class RecuperoVariabiliSessioneDelegate implements JavaDelegate {
 
 		LOGGER.info("[RecuperoVariabiliSessioneDelegate] Message= OrdineContieneMaterialiDaOrdinareDaFornitore: "
 				+ RecuperoVariabiliSessione.isOrdineContieneMaterialiDaOrdinareDaFornitore());
-		execution.setVariable("OrdineContieneMaterialiDaOrdinareDaFornitore",
+		execution.setVariable("ordineContieneMaterialiDaOrdinareDaFornitore",
 				RecuperoVariabiliSessione.isOrdineContieneMaterialiDaOrdinareDaFornitore());
 
 		LOGGER.info("[RecuperoVariabiliSessioneDelegate] Message= OrdineContieneAccessoriDaNonAssemblare: "
 				+ RecuperoVariabiliSessione.isOrdineContieneAccessoriDaNonAssemblare());
-		execution.setVariable("OrdineContieneAccessoriDaNonAssemblare",
+		execution.setVariable("ordineContieneAccessoriDaNonAssemblare",
 				RecuperoVariabiliSessione.isOrdineContieneAccessoriDaNonAssemblare());
 
 		LOGGER.info("[RecuperoVariabiliSessioneDelegate] Message= OrdineContieneMaterialiPrenotatiMP: "
 				+ RecuperoVariabiliSessione.isOrdineContieneMaterialiPrenotatiMP());
-		execution.setVariable("OrdineContieneMaterialiPrenotatiMP",
+		execution.setVariable("ordineContieneMaterialiPrenotatiMP",
 				RecuperoVariabiliSessione.isOrdineContieneMaterialiPrenotatiMP());
 
 		LOGGER.info("[RecuperoVariabiliSessioneDelegate] Message= OrdineContieneMaterialiPrenotatiMS: "
 				+ RecuperoVariabiliSessione.isOrdineContieneMaterialiPrenotatiMS());
-		execution.setVariable("OrdineContieneMaterialiPrenotatiMS",
+		execution.setVariable("ordineContieneMaterialiPrenotatiMS",
 				RecuperoVariabiliSessione.isOrdineContieneMaterialiPrenotatiMS());
 
 		LOGGER.info("[RecuperoVariabiliSessioneDelegate] Message= TuttiAccessoriPresentiNeiMagazzini: "
 				+ RecuperoVariabiliSessione.isTuttiAccessoriPresentiNeiMagazzini());
-		execution.setVariable("TuttiAccessoriPresentiNeiMagazzini",
+		execution.setVariable("tuttiAccessoriPresentiNeiMagazzini",
 				RecuperoVariabiliSessione.isTuttiAccessoriPresentiNeiMagazzini());
 	}
 

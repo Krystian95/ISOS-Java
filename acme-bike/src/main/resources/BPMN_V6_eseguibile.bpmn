@@ -126,7 +126,7 @@
         <bpmn:flowNodeRef>Event_1dpdk45</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_1xwyy0c</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_1cr6m8k</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_1cih38w</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_17vlvmj</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
     <bpmn:sequenceFlow id="Flow_05lk57g" sourceRef="Activity_02dnfjs" targetRef="Activity_0vtd7v0" />
@@ -161,13 +161,13 @@
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${tuttiAccessoriPresentiNeiMagazzini == true}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_1o7df6s" name="L&#39;ordine contiene materiali da ordinare dal fornitore" sourceRef="Gateway_17c6bp7" targetRef="Activity_0b0acnk">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${ordineContieneMaterialiDaOrdinareDaFornitore == false}</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${ordineContieneMaterialiDaOrdinareDaFornitore == true}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_16b2nr9" name="Ordine contiene accessori o componenti da assemblare" sourceRef="Gateway_13zkauo" targetRef="Activity_0snn2wy">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${ordineContieneComponentiAccessoriDaAssemblare == true}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_14csd6t" sourceRef="Gateway_1bp9c8o" targetRef="Gateway_003ldu7" />
-    <bpmn:sequenceFlow id="Flow_0526z15" sourceRef="Event_1cr6m8k" targetRef="Activity_1cih38w" />
+    <bpmn:sequenceFlow id="Flow_0526z15" sourceRef="Event_1cr6m8k" targetRef="Activity_17vlvmj" />
     <bpmn:sequenceFlow id="Flow_1vmiwb0" sourceRef="Event_14641ds" targetRef="Gateway_1xs5m0z" />
     <bpmn:sequenceFlow id="Flow_1tunplm" sourceRef="Gateway_1xs5m0z" targetRef="Gateway_1bxjvha" />
     <bpmn:sequenceFlow id="Flow_1tkfca1" sourceRef="Gateway_1xs5m0z" targetRef="Gateway_1ddziyi" />
@@ -193,7 +193,7 @@
     <bpmn:sequenceFlow id="Flow_0pa3fdt" sourceRef="Activity_01167q7" targetRef="Activity_08ivs2a" />
     <bpmn:sequenceFlow id="Flow_1soi4bk" sourceRef="Event_1xwyy0c" targetRef="Activity_1aljg1b" />
     <bpmn:sequenceFlow id="Flow_15c3ygc" name="L&#39;ordine contiene materiali prenotati nei MS" sourceRef="Gateway_17c6bp7" targetRef="Activity_1fpw2ul">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${ordineContieneMaterialiPrenotatiMS == false}</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${ordineContieneMaterialiPrenotatiMS == true}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_1j0skbf" sourceRef="Activity_1fpw2ul" targetRef="Activity_0tnlz65" />
     <bpmn:sequenceFlow id="Flow_00udagd" sourceRef="Activity_0psaq7m" targetRef="Activity_0c4bac0" />
@@ -252,7 +252,7 @@
       <bpmn:incoming>Flow_1pb3lx9</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:serviceTask id="Activity_19ie2m0" name="Sblocco prenotazioni componenti/accessori nei Magazzini" camunda:class="org.camunda.bpm.acme.magazzini.SbloccoPrenotazioniComponentiAccessoriMagazziniDelegate">
-      <bpmn:incoming>Flow_18mn1xx</bpmn:incoming>
+      <bpmn:incoming>Flow_17kjvvb</bpmn:incoming>
       <bpmn:outgoing>Flow_1pb3lx9</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:exclusiveGateway id="Gateway_1lsmitf">
@@ -462,7 +462,7 @@
       <bpmn:incoming>Flow_15k0ob5</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_1lop2fk" sourceRef="Activity_1aljg1b" targetRef="Gateway_17c6bp7" />
-    <bpmn:serviceTask id="Activity_1aljg1b" name="Ripristino variabili di sessione" camunda:class="org.camunda.bpm.acme.gestione_ordini.RipristinoVariabiliSessioneDelegate">
+    <bpmn:serviceTask id="Activity_1aljg1b" name="Recupero variabili di sessione" camunda:class="org.camunda.bpm.acme.gestione_ordini.RecuperoVariabiliSessioneDelegate">
       <bpmn:incoming>Flow_1soi4bk</bpmn:incoming>
       <bpmn:outgoing>Flow_1lop2fk</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -500,10 +500,10 @@
       <bpmn:outgoing>Flow_0526z15</bpmn:outgoing>
       <bpmn:messageEventDefinition id="MessageEventDefinition_1mlio7p" messageRef="Message_1kcwpch" />
     </bpmn:startEvent>
-    <bpmn:sequenceFlow id="Flow_18mn1xx" sourceRef="Activity_1cih38w" targetRef="Activity_19ie2m0" />
-    <bpmn:serviceTask id="Activity_1cih38w" name="Ripristino variabili di sessione" camunda:class="org.camunda.bpm.acme.gestione_ordini.RipristinoVariabiliSessioneDelegate">
+    <bpmn:sequenceFlow id="Flow_17kjvvb" sourceRef="Activity_17vlvmj" targetRef="Activity_19ie2m0" />
+    <bpmn:serviceTask id="Activity_17vlvmj" name="Recupero variabili di sessione" camunda:class="org.camunda.bpm.acme.gestione_ordini.RecuperoVariabiliSessioneDelegate">
       <bpmn:incoming>Flow_0526z15</bpmn:incoming>
-      <bpmn:outgoing>Flow_18mn1xx</bpmn:outgoing>
+      <bpmn:outgoing>Flow_17kjvvb</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:textAnnotation id="TextAnnotation_0784num">
       <bpmn:text>Per ogni materiale richiesto è riportato il magazzino che lo possiede (se esiste)</bpmn:text>
@@ -772,7 +772,7 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0526z15_di" bpmnElement="Flow_0526z15">
         <di:waypoint x="2480" y="1121" />
-        <di:waypoint x="2480" y="1190" />
+        <di:waypoint x="2480" y="1200" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_14csd6t_di" bpmnElement="Flow_14csd6t">
         <di:waypoint x="1872" y="965" />
@@ -891,8 +891,8 @@
         <di:waypoint x="2875" y="1143" />
         <di:waypoint x="2875" y="2760" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_18mn1xx_di" bpmnElement="Flow_18mn1xx">
-        <di:waypoint x="2480" y="1270" />
+      <bpmndi:BPMNEdge id="Flow_17kjvvb_di" bpmnElement="Flow_17kjvvb">
+        <di:waypoint x="2480" y="1280" />
         <di:waypoint x="2480" y="2387" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Activity_0vtd7v0_di" bpmnElement="Activity_0vtd7v0">
@@ -1111,6 +1111,18 @@
           <dc:Bounds x="340" y="1128" width="82" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0ytt88t_di" bpmnElement="Event_1xwyy0c">
+        <dc:Bounds x="3382" y="745" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="3428" y="743" width="62" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1ihvc4p_di" bpmnElement="Event_1cr6m8k">
+        <dc:Bounds x="2462" y="1085" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2373" y="1089" width="79" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="TextAnnotation_0784num_di" bpmnElement="TextAnnotation_0784num">
         <dc:Bounds x="2790" y="2890" width="170" height="54" />
       </bpmndi:BPMNShape>
@@ -1129,20 +1141,8 @@
       <bpmndi:BPMNShape id="TextAnnotation_1o3kgtn_di" bpmnElement="TextAnnotation_1o3kgtn">
         <dc:Bounds x="1410" y="975" width="160" height="50" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0ytt88t_di" bpmnElement="Event_1xwyy0c">
-        <dc:Bounds x="3382" y="745" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="3428" y="743" width="62" height="40" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1ihvc4p_di" bpmnElement="Event_1cr6m8k">
-        <dc:Bounds x="2462" y="1085" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="2373" y="1089" width="79" height="27" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1cih38w_di" bpmnElement="Activity_1cih38w">
-        <dc:Bounds x="2430" y="1190" width="100" height="80" />
+      <bpmndi:BPMNShape id="Activity_17vlvmj_di" bpmnElement="Activity_17vlvmj">
+        <dc:Bounds x="2430" y="1200" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_14641ds_di" bpmnElement="Event_14641ds">
         <dc:Bounds x="5092" y="982" width="36" height="36" />
