@@ -174,11 +174,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link RecuperoVariabiliSessioneResponse }
+     * 
+     */
+    public RecuperoVariabiliSessioneResponse createRecuperoVariabiliSessioneResponse() {
+        return new RecuperoVariabiliSessioneResponse();
+    }
+
+    /**
      * Create an instance of {@link GetIdRivenditoreResponse }
      * 
      */
     public GetIdRivenditoreResponse createGetIdRivenditoreResponse() {
         return new GetIdRivenditoreResponse();
+    }
+
+    /**
+     * Create an instance of {@link RecuperoVariabiliSessione }
+     * 
+     */
+    public RecuperoVariabiliSessione createRecuperoVariabiliSessione() {
+        return new RecuperoVariabiliSessione();
     }
 
     /**

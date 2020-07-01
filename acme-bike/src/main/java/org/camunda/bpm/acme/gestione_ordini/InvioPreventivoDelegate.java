@@ -27,12 +27,11 @@ public class InvioPreventivoDelegate implements JavaDelegate {
 		GetIdOrdineResponse idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
 		String idOrdine = idOrdineResponse.getIdOrdine();
 		LOGGER.info("[InvioPreventivoDelegate] idOrdine = " + idOrdine);
-		
-		String idRivenditore = null;
 
 		InvioPreventivo bodyInvioPreventivo = new InvioPreventivo();
 		bodyInvioPreventivo.setIdOrdine(idOrdine);
-
+		
+		String idRivenditore = null;
 		GetIdRivenditore bodyGetIdRivenditore = new GetIdRivenditore();
 		bodyGetIdRivenditore.setIdOrdine(idOrdine);
 		GetIdRivenditoreResponse getIdRivenditore = acmeGestioneOrdini.getIdRivenditore(bodyGetIdRivenditore);
@@ -41,6 +40,7 @@ public class InvioPreventivoDelegate implements JavaDelegate {
 		
 		InvioPreventivoResponse InvioPreventivo = acmeGestioneOrdini.invioPreventivo(bodyInvioPreventivo);
 		LOGGER.info("[InvioPreventivoDelegate] Message= "+ InvioPreventivo.getMessage());
+		execution.setVariable("toEnd", "false");
 	}
 
 }

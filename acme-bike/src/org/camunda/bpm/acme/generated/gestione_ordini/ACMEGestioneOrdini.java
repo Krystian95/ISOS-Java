@@ -144,6 +144,18 @@ public interface ACMEGestioneOrdini {
      * 
      * @param body
      * @return
+     *     returns org.camunda.bpm.acme.generated.gestione_ordini.RecuperoVariabiliSessioneResponse
+     */
+    @WebMethod(action = "recuperoVariabiliSessione")
+    @WebResult(name = "recuperoVariabiliSessioneResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+    public RecuperoVariabiliSessioneResponse recuperoVariabiliSessione(
+        @WebParam(name = "recuperoVariabiliSessione", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        RecuperoVariabiliSessione body);
+
+    /**
+     * 
+     * @param body
+     * @return
      *     returns org.camunda.bpm.acme.generated.gestione_ordini.InvioPreventivoResponse
      */
     @WebMethod(action = "invioPreventivo")
