@@ -28,8 +28,6 @@ public class GenerazioneListaAccessoriPresentiMagazziniDelegate implements JavaD
 		LOGGER.info("[GenerazioneListaAccessoriPresentiMagazziniDelegate] idOrdineResponse = " + idOrdine);
 		bodyGenerazioneListaAccessoriPresentiMagazzini.setIdOrdine(idOrdine);
 
-		// LOGGER.info("VEDI QUI "+idOrdine);
-
 		GenerazioneListaAccessoriPresentiMagazziniResponse GenerazioneListaAccessoriPresentiMagazzini = acmeGestioneOrdini
 				.generazioneListaAccessoriPresentiMagazzini(bodyGenerazioneListaAccessoriPresentiMagazzini);
 

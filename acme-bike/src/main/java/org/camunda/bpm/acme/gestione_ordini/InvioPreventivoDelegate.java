@@ -40,7 +40,6 @@ public class InvioPreventivoDelegate implements JavaDelegate {
 
 		InvioPreventivoResponse InvioPreventivo = acmeGestioneOrdini.invioPreventivo(bodyInvioPreventivo);
 		LOGGER.info("[InvioPreventivoDelegate] Message= " + InvioPreventivo.getMessage());
-		execution.setVariable("toEnd", "false");
 	}
 
 }

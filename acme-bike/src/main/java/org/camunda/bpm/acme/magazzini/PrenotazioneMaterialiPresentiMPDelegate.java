@@ -29,14 +29,12 @@ public class PrenotazioneMaterialiPresentiMPDelegate implements JavaDelegate {
 
 		PrenotazioneMaterialiPresentiMPResponse prenotazioneMaterialiPresentiMP = acmeGestioneOrdini
 				.prenotazioneMaterialiPresentiMP(bodyPrenotazioneMaterialiPresentiMP);
-
 		LOGGER.info("[PrenotazioneMaterialiPresentiMPDelegate] tuttiMaterialiRichiestiPresentiMP = "
 				+ prenotazioneMaterialiPresentiMP.isTuttiMaterialiRichiestiPresentiMP());
 
 		execution.setVariable("tuttiMaterialiRichiestiPresentiMP",
 				prenotazioneMaterialiPresentiMP.isTuttiMaterialiRichiestiPresentiMP());
-
-		LOGGER.info("[PrenotazioneMaterialiPresentiMP] Message= " + prenotazioneMaterialiPresentiMP.getMessage());
+		LOGGER.info("[PrenotazioneMaterialiPresentiMPDelegate] Message= " + prenotazioneMaterialiPresentiMP.getMessage());
 	}
 
 }

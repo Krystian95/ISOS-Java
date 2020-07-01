@@ -9,6 +9,8 @@ public class GenerazioneListaMaterialiPresentiMPDelegate implements JavaDelegate
   private final static Logger LOGGER = Logger.getLogger("MAGAZZINI");
   
   public void execute(DelegateExecution execution) throws Exception {
+	  LOGGER.info("MS - Genero la lista dei materiali presenti nel MP.");
   }
+  
 
 }

@@ -26,12 +26,10 @@ public class SbloccoPrenotazioniComponentiAccessoriMagazziniDelegate implements 
 		LOGGER.info("[SbloccoPrenotazioniComponentiAccessoriMagazziniDelegate] idOrdine = " + idOrdine);
 
 		SbloccoPrenotazioniComponentiAccessoriMagazzini bodySbloccoPrenotazioniComponentiAccessoriMagazzini = new SbloccoPrenotazioniComponentiAccessoriMagazzini();
-
 		bodySbloccoPrenotazioniComponentiAccessoriMagazzini.setIdOrdine(idOrdine);
 
 		SbloccoPrenotazioniComponentiAccessoriMagazziniResponse SbloccoPrenotazioniComponentiAccessoriMagazzini = acmeGestioneOrdini
-				.sbloccoPrenotazioniComponentiAccessoriMagazzini(bodySbloccoPrenotazioniComponentiAccessoriMagazzini);
-		
+				.sbloccoPrenotazioniComponentiAccessoriMagazzini(bodySbloccoPrenotazioniComponentiAccessoriMagazzini);	
 		LOGGER.info("[SbloccoPrenotazioniComponentiAccessoriMagazziniDelegate] Message= "+ SbloccoPrenotazioniComponentiAccessoriMagazzini.getMessage());
 	}
 

@@ -24,7 +24,7 @@ public class VerificaCustomizzazioniDelegate implements JavaDelegate {
 		GetIdOrdine body = null;
 		GetIdOrdineResponse idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
 		String idOrdine = idOrdineResponse.getIdOrdine();
-
+		execution.setVariable("idOrdine", idOrdine);
 		LOGGER.info("[VerificaCustomizzazioniDelegate] idOrdineResponse = " + idOrdine);
 
 		VerificaCustomizzazioni bodyVerificaCustomizzazioni = new VerificaCustomizzazioni();
@@ -32,11 +32,9 @@ public class VerificaCustomizzazioniDelegate implements JavaDelegate {
 
 		VerificaCustomizzazioniResponse verificaCustomizzazioni = acmeGestioneOrdini
 				.verificaCustomizzazioni(idOrdineResponse);
-
 		LOGGER.info("[VerificaCustomizzazioniDelegate] customizzazioniPossibili = "
 				+ verificaCustomizzazioni.isCustomizzazioniPossibili());
-
-		execution.setVariable("idOrdine", idOrdine);
+		
 		execution.setVariable("customizzazioniPossibili", verificaCustomizzazioni.isCustomizzazioniPossibili());
 		execution.setVariable("ordineContieneComponentiAccessoriDaAssemblare",
 				verificaCustomizzazioni.isOrdineContieneComponentiAccessoriDaAssemblare());
