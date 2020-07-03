@@ -38,6 +38,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link VerificaAnticipoConSistemaBancario }
+     * 
+     */
+    public VerificaAnticipoConSistemaBancario createVerificaAnticipoConSistemaBancario() {
+        return new VerificaAnticipoConSistemaBancario();
+    }
+
+    /**
      * Create an instance of {@link RichiestaTrasferimentoMS }
      * 
      */
@@ -59,6 +67,22 @@ public class ObjectFactory {
      */
     public SbloccoPrenotazioniComponentiAccessoriMagazziniResponse createSbloccoPrenotazioniComponentiAccessoriMagazziniResponse() {
         return new SbloccoPrenotazioniComponentiAccessoriMagazziniResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetTransactionTokenAnticipoResponse }
+     * 
+     */
+    public GetTransactionTokenAnticipoResponse createGetTransactionTokenAnticipoResponse() {
+        return new GetTransactionTokenAnticipoResponse();
+    }
+
+    /**
+     * Create an instance of {@link RicevutaSaldo }
+     * 
+     */
+    public RicevutaSaldo createRicevutaSaldo() {
+        return new RicevutaSaldo();
     }
 
     /**
@@ -126,11 +150,35 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link VerificaAnticipoConSistemaBancarioResponse }
+     * 
+     */
+    public VerificaAnticipoConSistemaBancarioResponse createVerificaAnticipoConSistemaBancarioResponse() {
+        return new VerificaAnticipoConSistemaBancarioResponse();
+    }
+
+    /**
+     * Create an instance of {@link VerificaSaldoConSistemaBancarioResponse }
+     * 
+     */
+    public VerificaSaldoConSistemaBancarioResponse createVerificaSaldoConSistemaBancarioResponse() {
+        return new VerificaSaldoConSistemaBancarioResponse();
+    }
+
+    /**
      * Create an instance of {@link GenerazioneListaAccessoriPresentiMagazziniResponse }
      * 
      */
     public GenerazioneListaAccessoriPresentiMagazziniResponse createGenerazioneListaAccessoriPresentiMagazziniResponse() {
         return new GenerazioneListaAccessoriPresentiMagazziniResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetTransactionTokenSaldo }
+     * 
+     */
+    public GetTransactionTokenSaldo createGetTransactionTokenSaldo() {
+        return new GetTransactionTokenSaldo();
     }
 
     /**
@@ -155,6 +203,14 @@ public class ObjectFactory {
      */
     public PrenotazioneMaterialiPresentiMP createPrenotazioneMaterialiPresentiMP() {
         return new PrenotazioneMaterialiPresentiMP();
+    }
+
+    /**
+     * Create an instance of {@link RicevutaAnticipo }
+     * 
+     */
+    public RicevutaAnticipo createRicevutaAnticipo() {
+        return new RicevutaAnticipo();
     }
 
     /**
@@ -214,11 +270,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetTransactionTokenSaldoResponse }
+     * 
+     */
+    public GetTransactionTokenSaldoResponse createGetTransactionTokenSaldoResponse() {
+        return new GetTransactionTokenSaldoResponse();
+    }
+
+    /**
      * Create an instance of {@link GetIdOrdine }
      * 
      */
     public GetIdOrdine createGetIdOrdine() {
         return new GetIdOrdine();
+    }
+
+    /**
+     * Create an instance of {@link VerificaSaldoConSistemaBancario }
+     * 
+     */
+    public VerificaSaldoConSistemaBancario createVerificaSaldoConSistemaBancario() {
+        return new VerificaSaldoConSistemaBancario();
     }
 
     /**
@@ -235,6 +307,14 @@ public class ObjectFactory {
      */
     public ApplicazioneScontoResponse createApplicazioneScontoResponse() {
         return new ApplicazioneScontoResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetTransactionTokenAnticipo }
+     * 
+     */
+    public GetTransactionTokenAnticipo createGetTransactionTokenAnticipo() {
+        return new GetTransactionTokenAnticipo();
     }
 
     /**

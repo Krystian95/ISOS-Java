@@ -74,6 +74,18 @@ public interface ACMEGestioneOrdini {
      * 
      * @param body
      * @return
+     *     returns org.camunda.bpm.acme.generated.gestione_ordini.VerificaAnticipoConSistemaBancarioResponse
+     */
+    @WebMethod(action = "verificaAnticipoConSistemaBancario")
+    @WebResult(name = "verificaAnticipoConSistemaBancarioResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+    public VerificaAnticipoConSistemaBancarioResponse verificaAnticipoConSistemaBancario(
+        @WebParam(name = "verificaAnticipoConSistemaBancario", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        VerificaAnticipoConSistemaBancario body);
+
+    /**
+     * 
+     * @param body
+     * @return
      *     returns org.camunda.bpm.acme.generated.gestione_ordini.RichiestaTrasferimentoMSResponse
      */
     @WebMethod(action = "richiestaTrasferimentoMS")
@@ -86,11 +98,31 @@ public interface ACMEGestioneOrdini {
      * 
      * @param body
      */
+    @WebMethod(action = "ricevutaAnticipo")
+    @Oneway
+    public void ricevutaAnticipo(
+        @WebParam(name = "ricevutaAnticipo", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        RicevutaAnticipo body);
+
+    /**
+     * 
+     * @param body
+     */
     @WebMethod(action = "rifiutoPreventivo")
     @Oneway
     public void rifiutoPreventivo(
         @WebParam(name = "rifiutoPreventivo", targetNamespace = "mytest.test.com.xsd", partName = "body")
         RifiutoPreventivo body);
+
+    /**
+     * 
+     * @param body
+     */
+    @WebMethod(action = "ricevutaSaldo")
+    @Oneway
+    public void ricevutaSaldo(
+        @WebParam(name = "ricevutaSaldo", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        RicevutaSaldo body);
 
     /**
      * 
@@ -156,6 +188,18 @@ public interface ACMEGestioneOrdini {
      * 
      * @param body
      * @return
+     *     returns org.camunda.bpm.acme.generated.gestione_ordini.GetTransactionTokenSaldoResponse
+     */
+    @WebMethod(action = "getTransactionTokenSaldo")
+    @WebResult(name = "getTransactionTokenSaldoResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+    public GetTransactionTokenSaldoResponse getTransactionTokenSaldo(
+        @WebParam(name = "getTransactionTokenSaldo", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        GetTransactionTokenSaldo body);
+
+    /**
+     * 
+     * @param body
+     * @return
      *     returns org.camunda.bpm.acme.generated.gestione_ordini.InvioPreventivoResponse
      */
     @WebMethod(action = "invioPreventivo")
@@ -175,6 +219,30 @@ public interface ACMEGestioneOrdini {
     public GetIdOrdineResponse getIdOrdine(
         @WebParam(name = "getIdOrdine", targetNamespace = "mytest.test.com.xsd", partName = "body")
         GetIdOrdine body);
+
+    /**
+     * 
+     * @param body
+     * @return
+     *     returns org.camunda.bpm.acme.generated.gestione_ordini.VerificaSaldoConSistemaBancarioResponse
+     */
+    @WebMethod(action = "verificaSaldoConSistemaBancario")
+    @WebResult(name = "verificaSaldoConSistemaBancarioResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+    public VerificaSaldoConSistemaBancarioResponse verificaSaldoConSistemaBancario(
+        @WebParam(name = "verificaSaldoConSistemaBancario", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        VerificaSaldoConSistemaBancario body);
+
+    /**
+     * 
+     * @param body
+     * @return
+     *     returns org.camunda.bpm.acme.generated.gestione_ordini.GetTransactionTokenAnticipoResponse
+     */
+    @WebMethod(action = "getTransactionTokenAnticipo")
+    @WebResult(name = "getTransactionTokenAnticipoResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+    public GetTransactionTokenAnticipoResponse getTransactionTokenAnticipo(
+        @WebParam(name = "getTransactionTokenAnticipo", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        GetTransactionTokenAnticipo body);
 
     /**
      * 
