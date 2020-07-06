@@ -33,7 +33,6 @@ public class InviaOrdineAccessorioFornitoreDelegate implements JavaDelegate {
 		InvioOrdineAccessoriFornitoreResponse InviaOrdineAccessoriFornitore = acmeGestioneOrdini
 				.invioOrdineAccessoriFornitore(bodyInviaOrdineAccessorioFornitoreDelegate);
 		LOGGER.info("[InviaOrdineAccessorioFornitoreDelegate] Message = " + InviaOrdineAccessoriFornitore.getMessage());
-		
 
 	}
 

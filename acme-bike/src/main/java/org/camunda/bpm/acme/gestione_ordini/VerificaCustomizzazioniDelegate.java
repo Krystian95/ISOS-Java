@@ -14,7 +14,6 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 public class VerificaCustomizzazioniDelegate implements JavaDelegate {
 
 	private final static Logger LOGGER = Logger.getLogger("GESTIONE ORDINI");
-	boolean customizzazioniPossibili;
 
 	public void execute(DelegateExecution execution) throws Exception {
 		LOGGER.info("GESTIONE ORDINI - Verifico le customizzazioni disponibili.");
@@ -34,7 +33,7 @@ public class VerificaCustomizzazioniDelegate implements JavaDelegate {
 				.verificaCustomizzazioni(idOrdineResponse);
 		LOGGER.info("[VerificaCustomizzazioniDelegate] customizzazioniPossibili = "
 				+ verificaCustomizzazioni.isCustomizzazioniPossibili());
-		
+
 		execution.setVariable("customizzazioniPossibili", verificaCustomizzazioni.isCustomizzazioniPossibili());
 		execution.setVariable("ordineContieneComponentiAccessoriDaAssemblare",
 				verificaCustomizzazioni.isOrdineContieneComponentiAccessoriDaAssemblare());

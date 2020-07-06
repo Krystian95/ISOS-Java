@@ -21,7 +21,7 @@ public class GenerazioneListaAccessoriPresentiMagazziniDelegate implements JavaD
 		ACMEGestioneOrdini acmeGestioneOrdini = new ACMEGestioneOrdiniService().getACMEGestioneOrdiniServicePort();
 
 		GenerazioneListaAccessoriPresentiMagazzini bodyGenerazioneListaAccessoriPresentiMagazzini = new GenerazioneListaAccessoriPresentiMagazzini();
-		
+
 		GetIdOrdine body = null;
 		GetIdOrdineResponse idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
 		String idOrdine = idOrdineResponse.getIdOrdine();

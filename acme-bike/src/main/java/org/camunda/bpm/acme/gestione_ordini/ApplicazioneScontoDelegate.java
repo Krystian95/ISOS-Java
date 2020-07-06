@@ -14,7 +14,6 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 public class ApplicazioneScontoDelegate implements JavaDelegate {
 
 	private final static Logger LOGGER = Logger.getLogger("GESTIONE ORDINI");
-	boolean anticipoVerificato;
 
 	public void execute(DelegateExecution execution) throws Exception {
 		LOGGER.info("GESTIONE ORDINI - Applico lo sconto.");
@@ -25,14 +24,14 @@ public class ApplicazioneScontoDelegate implements JavaDelegate {
 		GetIdOrdineResponse idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
 		String idOrdine = idOrdineResponse.getIdOrdine();
 		LOGGER.info("[ApplicazioneScontoDelegate] idOrdine = " + idOrdine);
-		
+
 		ApplicazioneSconto bodyApplicazioneSconto = new ApplicazioneSconto();
 		bodyApplicazioneSconto.setIdOrdine(idOrdine);
 		bodyApplicazioneSconto.setPercentualeSconto((String) execution.getVariable("percentualeSconto"));
 
 		ApplicazioneScontoResponse ApplicazioneSconto = acmeGestioneOrdini.applicazioneSconto(bodyApplicazioneSconto);
-		LOGGER.info("[ApplicazioneScontoDelegate] Message= "+ ApplicazioneSconto.getMessage());
-		
+		LOGGER.info("[ApplicazioneScontoDelegate] Message= " + ApplicazioneSconto.getMessage());
+
 	}
 
 }

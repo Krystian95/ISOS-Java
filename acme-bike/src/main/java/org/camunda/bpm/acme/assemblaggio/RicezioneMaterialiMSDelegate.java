@@ -6,10 +6,10 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 
 public class RicezioneMaterialiMSDelegate implements JavaDelegate {
 
-  private final static Logger LOGGER = Logger.getLogger("ASSEMBLAGGIO");
-  
-  public void execute(DelegateExecution execution) throws Exception {
-	  LOGGER.info("ASSEMBLAGGIO - Ricevo i materiali disponibili dai MS.");
-  }
+	private final static Logger LOGGER = Logger.getLogger("ASSEMBLAGGIO");
+
+	public void execute(DelegateExecution execution) throws Exception {
+		LOGGER.info("ASSEMBLAGGIO - Ricevo i materiali disponibili dai MS.");
+	}
 
 }

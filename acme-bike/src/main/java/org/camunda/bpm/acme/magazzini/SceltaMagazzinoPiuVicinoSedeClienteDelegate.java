@@ -6,10 +6,11 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 
 public class SceltaMagazzinoPiuVicinoSedeClienteDelegate implements JavaDelegate {
 
-  private final static Logger LOGGER = Logger.getLogger("MAGAZZINI");
-  
-  public void execute(DelegateExecution execution) throws Exception {
-	  LOGGER.info("MS - Dopo aver ordinato la lista dei magazzini disponibili, scelgo il magazzino più vicino alla sede del cliente.");
-  }
+	private final static Logger LOGGER = Logger.getLogger("MAGAZZINI");
+
+	public void execute(DelegateExecution execution) throws Exception {
+		LOGGER.info(
+				"MS - Dopo aver ordinato la lista dei magazzini disponibili, scelgo il magazzino più vicino alla sede del cliente.");
+	}
 
 }

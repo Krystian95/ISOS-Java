@@ -6,10 +6,10 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 
 public class InvioMaterialiMSDelegate implements JavaDelegate {
 
-  private final static Logger LOGGER = Logger.getLogger("MAGAZZINI");
-  
-  public void execute(DelegateExecution execution) throws Exception {
-	  LOGGER.info("MS - Invio i materiali disponibili nel MS.");
-  }
+	private final static Logger LOGGER = Logger.getLogger("MAGAZZINI");
+
+	public void execute(DelegateExecution execution) throws Exception {
+		LOGGER.info("MS - Invio i materiali disponibili nel MS.");
+	}
 
 }

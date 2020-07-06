@@ -45,6 +45,7 @@ org\camunda\bpm\acme\magazzini\RicezioneRichiestaTrasferimentoMSDelegate.class
 org\camunda\bpm\acme\assemblaggio\InvioOrdineCorriereDelegate.class
 org\camunda\bpm\acme\generated\gestione_ordini\CalcoloPreventivoResponse.class
 org\camunda\bpm\acme\generated\gestione_ordini\VerificaCustomizzazioni.class
+org\camunda\bpm\acme\assemblaggio\AssemblaggioCicliAccessoriDelegate.class
 org\camunda\bpm\acme\generated\gestione_ordini\InvioOrdineAccessoriFornitore.class
 org\camunda\bpm\acme\generated\gestione_ordini\RecuperoVariabiliSessione.class
 org\camunda\bpm\acme\generated\gestione_ordini\VerificaSaldoConSistemaBancario.class
@@ -64,6 +65,7 @@ org\camunda\bpm\acme\magazzini\GenerazioneListaMaterialiPresentiMPDelegate.class
 org\camunda\bpm\acme\generated\gestione_ordini\GetIdRivenditore.class
 org\camunda\bpm\acme\generated\gestione_ordini\InvioOrdineCorriereResponse.class
 org\camunda\bpm\acme\gestione_ordini\VerificaAnticipoConSistemaBancarioDelegate.class
+org\camunda\bpm\acme\assemblaggio\RicezioneMaterialiDaFornitoreDelegate.class
 org\camunda\bpm\acme\generated\gestione_ordini\ACMEGestioneOrdini.class
 org\camunda\bpm\acme\gestione_ordini\ApplicazioneScontoDelegate.class
 org\camunda\bpm\acme\assemblaggio\RichiestaTrasferimentoMSDelegate.class

@@ -30,7 +30,8 @@ public class PrenotazioneMaterialiPresentiMSDelegate implements JavaDelegate {
 		PrenotazioneMaterialiPresentiMSResponse prenotazioneMaterialiPresentiMS = acmeGestioneOrdini
 				.prenotazioneMaterialiPresentiMS(bodyPrenotazioneMaterialiPresentiMS);
 
-		LOGGER.info("[PrenotazioneMaterialiPresentiMSDelegate] Message= " + prenotazioneMaterialiPresentiMS.getMessage());
+		LOGGER.info(
+				"[PrenotazioneMaterialiPresentiMSDelegate] Message= " + prenotazioneMaterialiPresentiMS.getMessage());
 	}
 
 }

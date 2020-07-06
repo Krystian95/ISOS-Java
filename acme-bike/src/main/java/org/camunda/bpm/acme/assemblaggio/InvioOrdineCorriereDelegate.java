@@ -25,13 +25,13 @@ public class InvioOrdineCorriereDelegate implements JavaDelegate {
 		String idOrdine = idOrdineResponse.getIdOrdine();
 		execution.setVariable("idOrdine", idOrdine);
 		LOGGER.info("[InvioOrdineCorriereDelegate] idOrdine = " + idOrdine);
-		
-		InvioOrdineCorriere bodyInvioOrdineCorriere= new InvioOrdineCorriere();
+
+		InvioOrdineCorriere bodyInvioOrdineCorriere = new InvioOrdineCorriere();
 		bodyInvioOrdineCorriere.setIdOrdine(idOrdine);
-		
-		InvioOrdineCorriereResponse InvioOrdineCorriere = acmeGestioneOrdini.invioOrdineCorriere(bodyInvioOrdineCorriere);
-		LOGGER.info("[InvioOrdineCorriereDelegate] Message = "
-				+ InvioOrdineCorriere.getMessage());
+
+		InvioOrdineCorriereResponse InvioOrdineCorriere = acmeGestioneOrdini
+				.invioOrdineCorriere(bodyInvioOrdineCorriere);
+		LOGGER.info("[InvioOrdineCorriereDelegate] Message = " + InvioOrdineCorriere.getMessage());
 	}
 
 }

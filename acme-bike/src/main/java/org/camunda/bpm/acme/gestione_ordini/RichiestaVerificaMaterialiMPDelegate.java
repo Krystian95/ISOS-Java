@@ -6,9 +6,9 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 
 public class RichiestaVerificaMaterialiMPDelegate implements JavaDelegate {
 
-  private final static Logger LOGGER = Logger.getLogger("GESTIONE ORDINI");
-  
-  public void execute(DelegateExecution execution) throws Exception {
-  }
+	private final static Logger LOGGER = Logger.getLogger("GESTIONE ORDINI");
+
+	public void execute(DelegateExecution execution) throws Exception {
+	}
 
 }

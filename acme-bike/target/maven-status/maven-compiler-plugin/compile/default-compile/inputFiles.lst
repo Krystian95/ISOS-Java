@@ -38,6 +38,8 @@ C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\assemblaggio\RichiestaTrasferimentoMSDelegate.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\CalcoloPreventivoResponse.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\generated\gestione_ordini\RichiestaTrasferimentoMSResponse.java
+C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\assemblaggio\AssemblaggioCicliAccessoriDelegate.java
+C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\assemblaggio\RicezioneMaterialiDaFornitoreDelegate.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\gestione_ordini\VerificaCustomizzazioniDelegate.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\assemblaggio\InvioOrdineCorriereDelegate.java
 C:\Users\andre\Documents\Progetti\ISOS-Java\acme-bike\src\main\java\org\camunda\bpm\acme\gestione_ordini\InvioNotificaCustomizzazioniNonRealizzabiliDelegate.java

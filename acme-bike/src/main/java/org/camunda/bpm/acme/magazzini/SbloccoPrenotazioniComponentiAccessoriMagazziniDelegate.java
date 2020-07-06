@@ -19,7 +19,7 @@ public class SbloccoPrenotazioniComponentiAccessoriMagazziniDelegate implements 
 		LOGGER.info("MS - Dopo aver ricevuto il rifiuto del preventivo, sblocco i materiali precedentemente bloccati.");
 
 		ACMEGestioneOrdini acmeGestioneOrdini = new ACMEGestioneOrdiniService().getACMEGestioneOrdiniServicePort();
-		
+
 		GetIdOrdine body = null;
 		GetIdOrdineResponse idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
 		String idOrdine = idOrdineResponse.getIdOrdine();
@@ -29,8 +29,9 @@ public class SbloccoPrenotazioniComponentiAccessoriMagazziniDelegate implements 
 		bodySbloccoPrenotazioniComponentiAccessoriMagazzini.setIdOrdine(idOrdine);
 
 		SbloccoPrenotazioniComponentiAccessoriMagazziniResponse SbloccoPrenotazioniComponentiAccessoriMagazzini = acmeGestioneOrdini
-				.sbloccoPrenotazioniComponentiAccessoriMagazzini(bodySbloccoPrenotazioniComponentiAccessoriMagazzini);	
-		LOGGER.info("[SbloccoPrenotazioniComponentiAccessoriMagazziniDelegate] Message= "+ SbloccoPrenotazioniComponentiAccessoriMagazzini.getMessage());
+				.sbloccoPrenotazioniComponentiAccessoriMagazzini(bodySbloccoPrenotazioniComponentiAccessoriMagazzini);
+		LOGGER.info("[SbloccoPrenotazioniComponentiAccessoriMagazziniDelegate] Message= "
+				+ SbloccoPrenotazioniComponentiAccessoriMagazzini.getMessage());
 	}
 
 }

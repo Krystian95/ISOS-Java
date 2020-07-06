@@ -38,7 +38,8 @@ public class RecuperoVariabiliSessioneDelegate implements JavaDelegate {
 		idRivenditore = getIdRivenditore.getIdRivenditore();
 		execution.setVariable("idRivenditore", idRivenditore);
 
-		RecuperoVariabiliSessioneResponse RecuperoVariabiliSessione = acmeGestioneOrdini.recuperoVariabiliSessione(bodyRecuperoVariabiliSessione);
+		RecuperoVariabiliSessioneResponse RecuperoVariabiliSessione = acmeGestioneOrdini
+				.recuperoVariabiliSessione(bodyRecuperoVariabiliSessione);
 
 		LOGGER.info("[RecuperoVariabiliSessioneDelegate] Message= idOrdine: " + execution.getVariable("idOrdine"));
 

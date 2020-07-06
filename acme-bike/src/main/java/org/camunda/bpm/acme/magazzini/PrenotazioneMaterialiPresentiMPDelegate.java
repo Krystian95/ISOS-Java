@@ -34,7 +34,8 @@ public class PrenotazioneMaterialiPresentiMPDelegate implements JavaDelegate {
 
 		execution.setVariable("tuttiMaterialiRichiestiPresentiMP",
 				prenotazioneMaterialiPresentiMP.isTuttiMaterialiRichiestiPresentiMP());
-		LOGGER.info("[PrenotazioneMaterialiPresentiMPDelegate] Message= " + prenotazioneMaterialiPresentiMP.getMessage());
+		LOGGER.info(
+				"[PrenotazioneMaterialiPresentiMPDelegate] Message= " + prenotazioneMaterialiPresentiMP.getMessage());
 	}
 
 }

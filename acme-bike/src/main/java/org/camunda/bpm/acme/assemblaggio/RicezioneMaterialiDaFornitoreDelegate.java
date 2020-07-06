@@ -4,12 +4,12 @@ import java.util.logging.Logger;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
-public class RicezioneMaterialiMPDelegate implements JavaDelegate {
+public class RicezioneMaterialiDaFornitoreDelegate implements JavaDelegate {
 
 	private final static Logger LOGGER = Logger.getLogger("ASSEMBLAGGIO");
 
 	public void execute(DelegateExecution execution) throws Exception {
-		LOGGER.info("ASSEMBLAGGIO - Ricevo i materiali disponibili da MP.");
+		LOGGER.info("ASSEMBLAGGIO - Ricevo i materiali dal fornitore.");
 	}
 
 }

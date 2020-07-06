@@ -29,7 +29,7 @@ public class CalcoloPreventivoDelegate implements JavaDelegate {
 
 		CalcoloPreventivo bodyCalcoloPreventivo = new CalcoloPreventivo();
 		bodyCalcoloPreventivo.setIdOrdine(idOrdine);
-		
+
 		String idRivenditore = null;
 		GetIdRivenditore bodyGetIdRivenditore = new GetIdRivenditore();
 		bodyGetIdRivenditore.setIdOrdine(idOrdine);
