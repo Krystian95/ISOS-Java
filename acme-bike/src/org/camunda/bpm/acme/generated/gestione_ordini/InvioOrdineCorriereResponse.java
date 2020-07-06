@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="idOrdine" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,36 +29,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "idOrdine"
+    "message"
 })
-@XmlRootElement(name = "getTransactionTokenAnticipo")
-public class GetTransactionTokenAnticipo {
+@XmlRootElement(name = "invioOrdineCorriereResponse")
+public class InvioOrdineCorriereResponse {
 
     @XmlElement(required = true)
-    protected String idOrdine;
+    protected String message;
 
     /**
-     * Recupera il valore della proprietà idOrdine.
+     * Recupera il valore della proprietà message.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getIdOrdine() {
-        return idOrdine;
+    public String getMessage() {
+        return message;
     }
 
     /**
-     * Imposta il valore della proprietà idOrdine.
+     * Imposta il valore della proprietà message.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setIdOrdine(String value) {
-        this.idOrdine = value;
+    public void setMessage(String value) {
+        this.message = value;
     }
 
 }

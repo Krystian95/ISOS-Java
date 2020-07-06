@@ -4,8 +4,6 @@ import java.util.logging.Logger;
 
 import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdini;
 import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdiniService;
-import org.camunda.bpm.acme.generated.gestione_ordini.GetTransactionTokenAnticipo;
-import org.camunda.bpm.acme.generated.gestione_ordini.GetTransactionTokenAnticipoResponse;
 import org.camunda.bpm.acme.generated.gestione_ordini.VerificaAnticipoConSistemaBancario;
 import org.camunda.bpm.acme.generated.gestione_ordini.VerificaAnticipoConSistemaBancarioResponse;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
@@ -26,11 +24,6 @@ public class VerificaAnticipoConSistemaBancarioDelegate implements JavaDelegate 
 	  
 	  VerificaAnticipoConSistemaBancario bodyVerificaAnticipoConSistemaBancario = new VerificaAnticipoConSistemaBancario();
 	  bodyVerificaAnticipoConSistemaBancario.setIdOrdine(idOrdine);
-	  
-	  GetTransactionTokenAnticipo bodyGetTransactionTokenAnticipo= new GetTransactionTokenAnticipo();
-	  bodyGetTransactionTokenAnticipo.setIdOrdine(idOrdine);
-	  GetTransactionTokenAnticipoResponse GetTransactionTokenAnticipo = acmeGestioneOrdini.getTransactionTokenAnticipo(bodyGetTransactionTokenAnticipo);
-	  bodyVerificaAnticipoConSistemaBancario.setTransactionToken(GetTransactionTokenAnticipo.getTransactionToken());
 	  
 	  VerificaAnticipoConSistemaBancarioResponse VerificaAnticipoConSistemaBancario = acmeGestioneOrdini.verificaAnticipoConSistemaBancario(bodyVerificaAnticipoConSistemaBancario);
 	  LOGGER.info("[VerificaAnticipoConSistemaBancarioDelegate] Message = " + VerificaAnticipoConSistemaBancario.getMessage());

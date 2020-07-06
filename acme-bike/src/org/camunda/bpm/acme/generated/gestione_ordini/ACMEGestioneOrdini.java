@@ -107,6 +107,18 @@ public interface ACMEGestioneOrdini {
     /**
      * 
      * @param body
+     * @return
+     *     returns org.camunda.bpm.acme.generated.gestione_ordini.InvioOrdineMaterialiNonPresentiFornitoreResponse
+     */
+    @WebMethod(action = "invioOrdineMaterialiNonPresentiFornitore")
+    @WebResult(name = "invioOrdineMaterialiNonPresentiFornitoreResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+    public InvioOrdineMaterialiNonPresentiFornitoreResponse invioOrdineMaterialiNonPresentiFornitore(
+        @WebParam(name = "invioOrdineMaterialiNonPresentiFornitore", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        InvioOrdineMaterialiNonPresentiFornitore body);
+
+    /**
+     * 
+     * @param body
      */
     @WebMethod(action = "rifiutoPreventivo")
     @Oneway
@@ -176,6 +188,18 @@ public interface ACMEGestioneOrdini {
      * 
      * @param body
      * @return
+     *     returns org.camunda.bpm.acme.generated.gestione_ordini.InvioOrdineCorriereResponse
+     */
+    @WebMethod(action = "invioOrdineCorriere")
+    @WebResult(name = "invioOrdineCorriereResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+    public InvioOrdineCorriereResponse invioOrdineCorriere(
+        @WebParam(name = "invioOrdineCorriere", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        InvioOrdineCorriere body);
+
+    /**
+     * 
+     * @param body
+     * @return
      *     returns org.camunda.bpm.acme.generated.gestione_ordini.RecuperoVariabiliSessioneResponse
      */
     @WebMethod(action = "recuperoVariabiliSessione")
@@ -183,18 +207,6 @@ public interface ACMEGestioneOrdini {
     public RecuperoVariabiliSessioneResponse recuperoVariabiliSessione(
         @WebParam(name = "recuperoVariabiliSessione", targetNamespace = "mytest.test.com.xsd", partName = "body")
         RecuperoVariabiliSessione body);
-
-    /**
-     * 
-     * @param body
-     * @return
-     *     returns org.camunda.bpm.acme.generated.gestione_ordini.GetTransactionTokenSaldoResponse
-     */
-    @WebMethod(action = "getTransactionTokenSaldo")
-    @WebResult(name = "getTransactionTokenSaldoResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
-    public GetTransactionTokenSaldoResponse getTransactionTokenSaldo(
-        @WebParam(name = "getTransactionTokenSaldo", targetNamespace = "mytest.test.com.xsd", partName = "body")
-        GetTransactionTokenSaldo body);
 
     /**
      * 
@@ -236,18 +248,6 @@ public interface ACMEGestioneOrdini {
      * 
      * @param body
      * @return
-     *     returns org.camunda.bpm.acme.generated.gestione_ordini.GetTransactionTokenAnticipoResponse
-     */
-    @WebMethod(action = "getTransactionTokenAnticipo")
-    @WebResult(name = "getTransactionTokenAnticipoResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
-    public GetTransactionTokenAnticipoResponse getTransactionTokenAnticipo(
-        @WebParam(name = "getTransactionTokenAnticipo", targetNamespace = "mytest.test.com.xsd", partName = "body")
-        GetTransactionTokenAnticipo body);
-
-    /**
-     * 
-     * @param body
-     * @return
      *     returns org.camunda.bpm.acme.generated.gestione_ordini.GetIdRivenditoreResponse
      */
     @WebMethod(action = "getIdRivenditore")
@@ -267,6 +267,18 @@ public interface ACMEGestioneOrdini {
     public GenerazioneListaAccessoriPresentiMagazziniResponse generazioneListaAccessoriPresentiMagazzini(
         @WebParam(name = "generazioneListaAccessoriPresentiMagazzini", targetNamespace = "mytest.test.com.xsd", partName = "body")
         GenerazioneListaAccessoriPresentiMagazzini body);
+
+    /**
+     * 
+     * @param body
+     * @return
+     *     returns org.camunda.bpm.acme.generated.gestione_ordini.InvioOrdineAccessoriFornitoreResponse
+     */
+    @WebMethod(action = "invioOrdineAccessoriFornitore")
+    @WebResult(name = "invioOrdineAccessoriFornitoreResponse", targetNamespace = "mytest.test.com.xsd", partName = "body")
+    public InvioOrdineAccessoriFornitoreResponse invioOrdineAccessoriFornitore(
+        @WebParam(name = "invioOrdineAccessoriFornitore", targetNamespace = "mytest.test.com.xsd", partName = "body")
+        InvioOrdineAccessoriFornitore body);
 
     /**
      * 

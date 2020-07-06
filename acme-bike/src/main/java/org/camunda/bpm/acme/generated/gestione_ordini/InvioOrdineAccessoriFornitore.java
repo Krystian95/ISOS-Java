@@ -31,8 +31,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "idOrdine"
 })
-@XmlRootElement(name = "getTransactionTokenSaldo")
-public class GetTransactionTokenSaldo {
+@XmlRootElement(name = "invioOrdineAccessoriFornitore")
+public class InvioOrdineAccessoriFornitore {
 
     @XmlElement(required = true)
     protected String idOrdine;

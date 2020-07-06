@@ -54,6 +54,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link InvioOrdineMaterialiNonPresentiFornitore }
+     * 
+     */
+    public InvioOrdineMaterialiNonPresentiFornitore createInvioOrdineMaterialiNonPresentiFornitore() {
+        return new InvioOrdineMaterialiNonPresentiFornitore();
+    }
+
+    /**
      * Create an instance of {@link RifiutoPreventivo }
      * 
      */
@@ -67,14 +75,6 @@ public class ObjectFactory {
      */
     public SbloccoPrenotazioniComponentiAccessoriMagazziniResponse createSbloccoPrenotazioniComponentiAccessoriMagazziniResponse() {
         return new SbloccoPrenotazioniComponentiAccessoriMagazziniResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetTransactionTokenAnticipoResponse }
-     * 
-     */
-    public GetTransactionTokenAnticipoResponse createGetTransactionTokenAnticipoResponse() {
-        return new GetTransactionTokenAnticipoResponse();
     }
 
     /**
@@ -142,6 +142,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link InvioOrdineCorriere }
+     * 
+     */
+    public InvioOrdineCorriere createInvioOrdineCorriere() {
+        return new InvioOrdineCorriere();
+    }
+
+    /**
+     * Create an instance of {@link InvioOrdineCorriereResponse }
+     * 
+     */
+    public InvioOrdineCorriereResponse createInvioOrdineCorriereResponse() {
+        return new InvioOrdineCorriereResponse();
+    }
+
+    /**
      * Create an instance of {@link PrenotazioneMaterialiPresentiMPResponse }
      * 
      */
@@ -174,11 +190,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetTransactionTokenSaldo }
+     * Create an instance of {@link InvioOrdineAccessoriFornitore }
      * 
      */
-    public GetTransactionTokenSaldo createGetTransactionTokenSaldo() {
-        return new GetTransactionTokenSaldo();
+    public InvioOrdineAccessoriFornitore createInvioOrdineAccessoriFornitore() {
+        return new InvioOrdineAccessoriFornitore();
     }
 
     /**
@@ -254,6 +270,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link InvioOrdineMaterialiNonPresentiFornitoreResponse }
+     * 
+     */
+    public InvioOrdineMaterialiNonPresentiFornitoreResponse createInvioOrdineMaterialiNonPresentiFornitoreResponse() {
+        return new InvioOrdineMaterialiNonPresentiFornitoreResponse();
+    }
+
+    /**
      * Create an instance of {@link CalcoloPreventivoResponse }
      * 
      */
@@ -267,14 +291,6 @@ public class ObjectFactory {
      */
     public InvioPreventivo createInvioPreventivo() {
         return new InvioPreventivo();
-    }
-
-    /**
-     * Create an instance of {@link GetTransactionTokenSaldoResponse }
-     * 
-     */
-    public GetTransactionTokenSaldoResponse createGetTransactionTokenSaldoResponse() {
-        return new GetTransactionTokenSaldoResponse();
     }
 
     /**
@@ -294,6 +310,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link InvioOrdineAccessoriFornitoreResponse }
+     * 
+     */
+    public InvioOrdineAccessoriFornitoreResponse createInvioOrdineAccessoriFornitoreResponse() {
+        return new InvioOrdineAccessoriFornitoreResponse();
+    }
+
+    /**
      * Create an instance of {@link PrenotazioneMaterialiPresentiMSResponse }
      * 
      */
@@ -307,14 +331,6 @@ public class ObjectFactory {
      */
     public ApplicazioneScontoResponse createApplicazioneScontoResponse() {
         return new ApplicazioneScontoResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetTransactionTokenAnticipo }
-     * 
-     */
-    public GetTransactionTokenAnticipo createGetTransactionTokenAnticipo() {
-        return new GetTransactionTokenAnticipo();
     }
 
     /**

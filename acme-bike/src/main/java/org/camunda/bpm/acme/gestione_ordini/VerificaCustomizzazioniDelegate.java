@@ -25,7 +25,7 @@ public class VerificaCustomizzazioniDelegate implements JavaDelegate {
 		GetIdOrdineResponse idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
 		String idOrdine = idOrdineResponse.getIdOrdine();
 		execution.setVariable("idOrdine", idOrdine);
-		LOGGER.info("[VerificaCustomizzazioniDelegate] idOrdineResponse = " + idOrdine);
+		LOGGER.info("[VerificaCustomizzazioniDelegate] idOrdine = " + idOrdine);
 
 		VerificaCustomizzazioni bodyVerificaCustomizzazioni = new VerificaCustomizzazioni();
 		bodyVerificaCustomizzazioni.setIdOrdine(idOrdine);
