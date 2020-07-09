@@ -21,10 +21,7 @@ public class InvioOrdineMaterialiNonPresentiFornitoreDelegate implements JavaDel
 
 		ACMEGestioneOrdini acmeGestioneOrdini = new ACMEGestioneOrdiniService().getACMEGestioneOrdiniServicePort();
 
-		GetIdOrdine body = null;
-		GetIdOrdineResponse idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
-		String idOrdine = idOrdineResponse.getIdOrdine();
-		execution.setVariable("idOrdine", idOrdine);
+		String idOrdine = (String) execution.getVariable("idOrdine");
 		LOGGER.info("[InvioOrdineMaterialiNonPresentiFornitoreDelegate] idOrdine = " + idOrdine);
 
 		InvioOrdineMaterialiNonPresentiFornitore bodyInvioOrdineMaterialiNonPresentiFornitore = new InvioOrdineMaterialiNonPresentiFornitore();

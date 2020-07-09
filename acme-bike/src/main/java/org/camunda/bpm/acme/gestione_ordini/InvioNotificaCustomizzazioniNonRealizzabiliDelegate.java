@@ -4,8 +4,6 @@ import java.util.logging.Logger;
 
 import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdini;
 import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdiniService;
-import org.camunda.bpm.acme.generated.gestione_ordini.GetIdOrdine;
-import org.camunda.bpm.acme.generated.gestione_ordini.GetIdOrdineResponse;
 import org.camunda.bpm.acme.generated.gestione_ordini.GetIdRivenditore;
 import org.camunda.bpm.acme.generated.gestione_ordini.GetIdRivenditoreResponse;
 import org.camunda.bpm.acme.generated.gestione_ordini.NotificaCustomizzazioniNonRealizzabili;
@@ -21,9 +19,7 @@ public class InvioNotificaCustomizzazioniNonRealizzabiliDelegate implements Java
 
 		ACMEGestioneOrdini acmeGestioneOrdini = new ACMEGestioneOrdiniService().getACMEGestioneOrdiniServicePort();
 
-		GetIdOrdine body = null;
-		GetIdOrdineResponse idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
-		String idOrdine = idOrdineResponse.getIdOrdine();
+		String idOrdine = (String) execution.getVariable("idOrdine");
 		LOGGER.info("[InvioNotificaCustomizzazioniNonRealizzabiliDelegate] idOrdine = " + idOrdine);
 
 		String idRivenditore = null;

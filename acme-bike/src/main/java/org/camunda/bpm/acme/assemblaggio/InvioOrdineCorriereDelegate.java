@@ -20,10 +20,7 @@ public class InvioOrdineCorriereDelegate implements JavaDelegate {
 
 		ACMEGestioneOrdini acmeGestioneOrdini = new ACMEGestioneOrdiniService().getACMEGestioneOrdiniServicePort();
 
-		GetIdOrdine body = null;
-		GetIdOrdineResponse idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
-		String idOrdine = idOrdineResponse.getIdOrdine();
-		execution.setVariable("idOrdine", idOrdine);
+		String idOrdine = (String) execution.getVariable("idOrdine");
 		LOGGER.info("[InvioOrdineCorriereDelegate] idOrdine = " + idOrdine);
 
 		InvioOrdineCorriere bodyInvioOrdineCorriere = new InvioOrdineCorriere();

@@ -20,9 +20,7 @@ public class RichiestaTrasferimentoMSDelegate implements JavaDelegate {
 
 		ACMEGestioneOrdini acmeGestioneOrdini = new ACMEGestioneOrdiniService().getACMEGestioneOrdiniServicePort();
 
-		GetIdOrdine body = null;
-		GetIdOrdineResponse idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
-		String idOrdine = idOrdineResponse.getIdOrdine();
+		String idOrdine = (String) execution.getVariable("idOrdine");
 		LOGGER.info("[RichiestaTrasferimentoMSDelegate] idOrdine = " + idOrdine);
 
 		RichiestaTrasferimentoMS bodyRichiestaTrasferimentoMS = new RichiestaTrasferimentoMS();

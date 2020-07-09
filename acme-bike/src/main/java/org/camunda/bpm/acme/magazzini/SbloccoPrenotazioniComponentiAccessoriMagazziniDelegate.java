@@ -20,9 +20,7 @@ public class SbloccoPrenotazioniComponentiAccessoriMagazziniDelegate implements 
 
 		ACMEGestioneOrdini acmeGestioneOrdini = new ACMEGestioneOrdiniService().getACMEGestioneOrdiniServicePort();
 
-		GetIdOrdine body = null;
-		GetIdOrdineResponse idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
-		String idOrdine = idOrdineResponse.getIdOrdine();
+		String idOrdine = (String) execution.getVariable("idOrdine");
 		LOGGER.info("[SbloccoPrenotazioniComponentiAccessoriMagazziniDelegate] idOrdine = " + idOrdine);
 
 		SbloccoPrenotazioniComponentiAccessoriMagazzini bodySbloccoPrenotazioniComponentiAccessoriMagazzini = new SbloccoPrenotazioniComponentiAccessoriMagazzini();

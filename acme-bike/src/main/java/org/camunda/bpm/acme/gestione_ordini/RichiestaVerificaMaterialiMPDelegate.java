@@ -9,6 +9,7 @@ public class RichiestaVerificaMaterialiMPDelegate implements JavaDelegate {
 	private final static Logger LOGGER = Logger.getLogger("GESTIONE ORDINI");
 
 	public void execute(DelegateExecution execution) throws Exception {
+		LOGGER.info("GESTIONE ORDINI - Mando la richiesta per verificare la presenza dei materiali nel MP.");
 	}
 
 }

@@ -6,8 +6,6 @@ import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdini;
 import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdiniService;
 import org.camunda.bpm.acme.generated.gestione_ordini.CalcoloPreventivo;
 import org.camunda.bpm.acme.generated.gestione_ordini.CalcoloPreventivoResponse;
-import org.camunda.bpm.acme.generated.gestione_ordini.GetIdOrdine;
-import org.camunda.bpm.acme.generated.gestione_ordini.GetIdOrdineResponse;
 import org.camunda.bpm.acme.generated.gestione_ordini.GetIdRivenditore;
 import org.camunda.bpm.acme.generated.gestione_ordini.GetIdRivenditoreResponse;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
@@ -22,9 +20,7 @@ public class CalcoloPreventivoDelegate implements JavaDelegate {
 
 		ACMEGestioneOrdini acmeGestioneOrdini = new ACMEGestioneOrdiniService().getACMEGestioneOrdiniServicePort();
 
-		GetIdOrdine body = null;
-		GetIdOrdineResponse idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
-		String idOrdine = idOrdineResponse.getIdOrdine();
+		String idOrdine = (String) execution.getVariable("idOrdine");
 		LOGGER.info("[CalcoloPreventivoDelegate] idOrdine = " + idOrdine);
 
 		CalcoloPreventivo bodyCalcoloPreventivo = new CalcoloPreventivo();
@@ -52,6 +48,7 @@ public class CalcoloPreventivoDelegate implements JavaDelegate {
 				CalcoloPreventivo.isOrdineContieneMaterialiPrenotatiMS());
 		execution.setVariable("ordineContieneMaterialiDaOrdinareDaFornitore",
 				CalcoloPreventivo.isOrdineContieneMaterialiDaOrdinareDaFornitore());
+		execution.setVariable("tuttiAccessoriPresentiNeiMagazzini", CalcoloPreventivo.isTuttiAccessoriPresentiNeiMagazzini());
 	}
 
 }

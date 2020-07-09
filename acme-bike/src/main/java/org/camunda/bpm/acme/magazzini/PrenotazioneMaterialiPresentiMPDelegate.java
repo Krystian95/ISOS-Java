@@ -21,11 +21,9 @@ public class PrenotazioneMaterialiPresentiMPDelegate implements JavaDelegate {
 		ACMEGestioneOrdini acmeGestioneOrdini = new ACMEGestioneOrdiniService().getACMEGestioneOrdiniServicePort();
 
 		PrenotazioneMaterialiPresentiMP bodyPrenotazioneMaterialiPresentiMP = new PrenotazioneMaterialiPresentiMP();
-		GetIdOrdine body = null;
-		GetIdOrdineResponse idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
-		String idOrdine = idOrdineResponse.getIdOrdine();
+
+		String idOrdine = (String) execution.getVariable("idOrdine");
 		LOGGER.info("[PrenotazioneMaterialiPresentiMPDelegate] idOrdine = " + idOrdine);
-		bodyPrenotazioneMaterialiPresentiMP.setIdOrdine(idOrdine);
 
 		PrenotazioneMaterialiPresentiMPResponse prenotazioneMaterialiPresentiMP = acmeGestioneOrdini
 				.prenotazioneMaterialiPresentiMP(bodyPrenotazioneMaterialiPresentiMP);

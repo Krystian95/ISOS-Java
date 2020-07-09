@@ -22,11 +22,8 @@ public class GenerazioneListaAccessoriPresentiMagazziniDelegate implements JavaD
 
 		GenerazioneListaAccessoriPresentiMagazzini bodyGenerazioneListaAccessoriPresentiMagazzini = new GenerazioneListaAccessoriPresentiMagazzini();
 
-		GetIdOrdine body = null;
-		GetIdOrdineResponse idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
-		String idOrdine = idOrdineResponse.getIdOrdine();
-		LOGGER.info("[GenerazioneListaAccessoriPresentiMagazziniDelegate] idOrdineResponse = " + idOrdine);
-		bodyGenerazioneListaAccessoriPresentiMagazzini.setIdOrdine(idOrdine);
+		String idOrdine = (String) execution.getVariable("idOrdine");
+		LOGGER.info("[GenerazioneListaAccessoriPresentiMagazziniDelegate] idOrdine = " + idOrdine);
 
 		GenerazioneListaAccessoriPresentiMagazziniResponse GenerazioneListaAccessoriPresentiMagazzini = acmeGestioneOrdini
 				.generazioneListaAccessoriPresentiMagazzini(bodyGenerazioneListaAccessoriPresentiMagazzini);

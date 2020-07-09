@@ -6,8 +6,6 @@ import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdini;
 import org.camunda.bpm.acme.generated.gestione_ordini.ACMEGestioneOrdiniService;
 import org.camunda.bpm.acme.generated.gestione_ordini.ApplicazioneSconto;
 import org.camunda.bpm.acme.generated.gestione_ordini.ApplicazioneScontoResponse;
-import org.camunda.bpm.acme.generated.gestione_ordini.GetIdOrdine;
-import org.camunda.bpm.acme.generated.gestione_ordini.GetIdOrdineResponse;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
@@ -20,9 +18,7 @@ public class ApplicazioneScontoDelegate implements JavaDelegate {
 
 		ACMEGestioneOrdini acmeGestioneOrdini = new ACMEGestioneOrdiniService().getACMEGestioneOrdiniServicePort();
 
-		GetIdOrdine body = null;
-		GetIdOrdineResponse idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
-		String idOrdine = idOrdineResponse.getIdOrdine();
+		String idOrdine = (String) execution.getVariable("idOrdine");
 		LOGGER.info("[ApplicazioneScontoDelegate] idOrdine = " + idOrdine);
 
 		ApplicazioneSconto bodyApplicazioneSconto = new ApplicazioneSconto();

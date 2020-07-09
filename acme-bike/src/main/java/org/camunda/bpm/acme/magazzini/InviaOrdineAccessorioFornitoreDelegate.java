@@ -17,15 +17,12 @@ public class InviaOrdineAccessorioFornitoreDelegate implements JavaDelegate {
 
 	public void execute(DelegateExecution execution) throws Exception {
 		LOGGER.info(
-				"MS - Invio l'ordine al fornitore di procurarmi l'accessorio mancante presso il MS più vicino al cliente (selezionato precedentemente).");
+				"MS - Invio l'ordine al fornitore di procurarmi l'accessorio mancante presso il MS piu' vicino al cliente (selezionato precedentemente).");
 
 		ACMEGestioneOrdini acmeGestioneOrdini = new ACMEGestioneOrdiniService().getACMEGestioneOrdiniServicePort();
 
-		GetIdOrdine body = null;
-		GetIdOrdineResponse idOrdineResponse = acmeGestioneOrdini.getIdOrdine(body);
-		String idOrdine = idOrdineResponse.getIdOrdine();
-		execution.setVariable("idOrdine", idOrdine);
-		LOGGER.info("[InviaOrdineCorriereDelegate] idOrdine = " + idOrdine);
+		String idOrdine = (String) execution.getVariable("idOrdine");
+		LOGGER.info("[InviaOrdineAccessorioFornitoreDelegate] idOrdine = " + idOrdine);
 
 		InvioOrdineAccessoriFornitore bodyInviaOrdineAccessorioFornitoreDelegate = new InvioOrdineAccessoriFornitore();
 		bodyInviaOrdineAccessorioFornitoreDelegate.setIdOrdine(idOrdine);

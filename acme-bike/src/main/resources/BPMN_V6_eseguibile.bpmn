@@ -17,8 +17,6 @@
     <bpmn:messageFlow id="Flow_0ino3jh" sourceRef="Participant_0aa6f4l" targetRef="Participant_0vstsfu" />
     <bpmn:messageFlow id="Flow_1gs6lal" sourceRef="Activity_1cuonnr" targetRef="Participant_0uw2d25" />
     <bpmn:messageFlow id="Flow_143ykd2" sourceRef="Activity_08ivs2a" targetRef="Participant_0uw2d25" />
-    <bpmn:messageFlow id="Flow_1g59391" sourceRef="Activity_1euuy3r" targetRef="Participant_1wnlwa5" />
-    <bpmn:messageFlow id="Flow_05549kq" sourceRef="Participant_1wnlwa5" targetRef="Activity_0zxptpd" />
     <bpmn:messageFlow id="Flow_1kq71l8" sourceRef="Event_0th5iez" targetRef="Participant_10hm4ip" />
     <bpmn:messageFlow id="Flow_1j9djex" sourceRef="Event_0eo3afh" targetRef="Participant_10hm4ip" />
     <bpmn:messageFlow id="Flow_1bv54nz" sourceRef="Participant_10hm4ip" targetRef="Event_1dpdk45" />
@@ -119,10 +117,10 @@
         <bpmn:flowNodeRef>Event_0gtq4wx</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1cuonnr</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_0o0ibcx</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_0zxptpd</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_1euuy3r</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1bu8x7d</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_1tsf4ux</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1euuy3r</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0zxptpd</bpmn:flowNodeRef>
         <bpmn:childLaneSet id="LaneSet_15uccdr" />
       </bpmn:lane>
     </bpmn:laneSet>
@@ -271,14 +269,6 @@
       <bpmn:incoming>Flow_0p6zuoq</bpmn:incoming>
       <bpmn:outgoing>Flow_0mbqvu7</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:receiveTask id="Activity_0zxptpd" name="Ricezione accessorio dal fornitore" messageRef="Message_11790ru">
-      <bpmn:incoming>Flow_0m0ywem</bpmn:incoming>
-      <bpmn:outgoing>Flow_0p6zuoq</bpmn:outgoing>
-    </bpmn:receiveTask>
-    <bpmn:sendTask id="Activity_1euuy3r" name="Invia ordine accessorio al fornitore" camunda:class="org.camunda.bpm.acme.magazzini.InviaOrdineAccessorioFornitoreDelegate">
-      <bpmn:incoming>Flow_0frxnox</bpmn:incoming>
-      <bpmn:outgoing>Flow_0m0ywem</bpmn:outgoing>
-    </bpmn:sendTask>
     <bpmn:serviceTask id="Activity_1bu8x7d" name="Selezione magazzino più vicino alla sede del cliente" camunda:class="org.camunda.bpm.acme.magazzini.SelezioneMagazzinoVicinoSedeClienteDelegate">
       <bpmn:incoming>Flow_1llnsb1</bpmn:incoming>
       <bpmn:outgoing>Flow_0frxnox</bpmn:outgoing>
@@ -493,6 +483,14 @@
     <bpmn:serviceTask id="Activity_0b0acnk" name="Invio ordine dei materiali non presenti al Fornitore" camunda:class="org.camunda.bpm.acme.assemblaggio.InvioOrdineMaterialiNonPresentiFornitoreDelegate">
       <bpmn:incoming>Flow_1o7df6s</bpmn:incoming>
       <bpmn:outgoing>Flow_1wfvpxl</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_1euuy3r" name="Invia ordine accessorio al fornitore" camunda:class="org.camunda.bpm.acme.magazzini.InviaOrdineAccessorioFornitoreDelegate">
+      <bpmn:incoming>Flow_0frxnox</bpmn:incoming>
+      <bpmn:outgoing>Flow_0m0ywem</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_0zxptpd" name="Ricezione accessorio dal fornitore" camunda:class="org.camunda.bpm.acme.magazzini.RicezioneAccessorioDalFornitoreDelegate">
+      <bpmn:incoming>Flow_0m0ywem</bpmn:incoming>
+      <bpmn:outgoing>Flow_0p6zuoq</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:textAnnotation id="TextAnnotation_0784num">
       <bpmn:text>Per ogni materiale richiesto è riportato il magazzino che lo possiede (se esiste)</bpmn:text>
@@ -989,12 +987,6 @@
       <bpmndi:BPMNShape id="Gateway_0o0ibcx_di" bpmnElement="Gateway_0o0ibcx" isMarkerVisible="true">
         <dc:Bounds x="5515" y="2155" width="50" height="50" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0zxptpd_di" bpmnElement="Activity_0zxptpd">
-        <dc:Bounds x="5490" y="2307" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1euuy3r_di" bpmnElement="Activity_1euuy3r">
-        <dc:Bounds x="5490" y="2480" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1bu8x7d_di" bpmnElement="Activity_1bu8x7d">
         <dc:Bounds x="5490" y="2660" width="100" height="80" />
       </bpmndi:BPMNShape>
@@ -1124,6 +1116,12 @@
       <bpmndi:BPMNShape id="Activity_0rgffom_di" bpmnElement="Activity_0b0acnk">
         <dc:Bounds x="3840" y="1510" width="100" height="80" />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1cjzj0p_di" bpmnElement="Activity_1euuy3r">
+        <dc:Bounds x="5490" y="2480" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1w53xb6_di" bpmnElement="Activity_0zxptpd">
+        <dc:Bounds x="5490" y="2307" width="100" height="80" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_14641ds_di" bpmnElement="Event_14641ds">
         <dc:Bounds x="5092" y="812" width="36" height="36" />
         <bpmndi:BPMNLabel>
@@ -1217,16 +1215,6 @@
       <bpmndi:BPMNEdge id="Flow_143ykd2_di" bpmnElement="Flow_143ykd2">
         <di:waypoint x="4660" y="1590" />
         <di:waypoint x="4660" y="3450" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1g59391_di" bpmnElement="Flow_1g59391">
-        <di:waypoint x="5490" y="2520" />
-        <di:waypoint x="5440" y="2520" />
-        <di:waypoint x="5440" y="3050" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_05549kq_di" bpmnElement="Flow_05549kq">
-        <di:waypoint x="5390" y="3050" />
-        <di:waypoint x="5390" y="2340" />
-        <di:waypoint x="5490" y="2340" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1kq71l8_di" bpmnElement="Flow_1kq71l8">
         <di:waypoint x="2000" y="435" />
